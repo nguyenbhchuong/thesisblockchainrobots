@@ -42,6 +42,7 @@ export interface TaskAssignerInterface extends Interface {
   getFunction(
     nameOrSignature:
       | "addTask"
+      | "getOwnTask"
       | "readTasks"
       | "robots"
       | "roundRobin"
@@ -56,6 +57,10 @@ export interface TaskAssignerInterface extends Interface {
   encodeFunctionData(
     functionFragment: "addTask",
     values: [string, string]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getOwnTask",
+    values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "readTasks", values?: undefined): string;
   encodeFunctionData(
@@ -73,6 +78,7 @@ export interface TaskAssignerInterface extends Interface {
   ): string;
 
   decodeFunctionResult(functionFragment: "addTask", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "getOwnTask", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "readTasks", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "robots", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "roundRobin", data: BytesLike): Result;
@@ -156,6 +162,12 @@ export interface TaskAssigner extends BaseContract {
     "nonpayable"
   >;
 
+  getOwnTask: TypedContractMethod<
+    [],
+    [TaskAssigner.TaskStructOutput],
+    "nonpayable"
+  >;
+
   readTasks: TypedContractMethod<[], [TaskAssigner.TaskStructOutput[]], "view">;
 
   robots: TypedContractMethod<
@@ -196,6 +208,9 @@ export interface TaskAssigner extends BaseContract {
     [void],
     "nonpayable"
   >;
+  getFunction(
+    nameOrSignature: "getOwnTask"
+  ): TypedContractMethod<[], [TaskAssigner.TaskStructOutput], "nonpayable">;
   getFunction(
     nameOrSignature: "readTasks"
   ): TypedContractMethod<[], [TaskAssigner.TaskStructOutput[]], "view">;

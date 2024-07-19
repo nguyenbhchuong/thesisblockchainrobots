@@ -1,0 +1,5 @@
+kurtosis clean -a && kurtosis run --enclave local-eth-testnet github.com/ethpandaops/ethereum-package --args-file ~/eth-network-params.yaml
+
+sudo kurtosis clean -a && sudo kurtosis run --enclave local-eth-testnet github.com/ethpandaops/ethereum-package --args-file ~/blockchain/network_params.yaml
+
+sudo kurtosis clean -a && sudo kurtosis run --enclave local-eth-testnet github.com/ethpandaops/ethereum-package --args-file ./network_params.yaml

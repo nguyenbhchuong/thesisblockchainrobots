@@ -1,27 +1,27 @@
-const { task } = require("hardhat/config");
-const { SignerWithAddress } = require("@nomiclabs/hardhat-ethers/signers") 
-const { BigNumber } = require("ethers")
-require("@nomicfoundation/hardhat-toolbox");
-require("@nomicfoundation/hardhat-chai-matchers");
+import { task } from "hardhat/config"
+import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
+import { BigNumber } from "ethers"
+import "@nomicfoundation/hardhat-toolbox";
+import "@nomicfoundation/hardhat-chai-matchers";
 
-task("accounts", "Prints the list of accounts", async (args, hre) => {
-  const accounts = await hre.ethers.getSigners()
-  accounts.forEach((account) => {
+task("accounts", "Prints the list of accounts", async (args, hre): Promise<void> => {
+  const accounts: SignerWithAddress[] = await hre.ethers.getSigners()
+  accounts.forEach((account: SignerWithAddress): void => {
     console.log(account.address)
   })
 })
 
-task("balances", "Prints the list of ETH account balances", async (args, hre) => {
-  const accounts = await hre.ethers.getSigners()
+task("balances", "Prints the list of ETH account balances", async (args, hre): Promise<void> => {
+  const accounts: SignerWithAddress[] = await hre.ethers.getSigners()
   for(const account of accounts){
-    const balance = await hre.ethers.provider.getBalance(
+    const balance: BigNumber = await hre.ethers.provider.getBalance(
         account.address
     );
     console.log(`${account.address} has balance ${balance.toString()}`);
   }
 })
 
-module.exports = {
+export default {
   solidity: {
     compilers: [
       {

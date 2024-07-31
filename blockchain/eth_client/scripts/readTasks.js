@@ -15,11 +15,7 @@ async function main() {
   });
 
   // Interact with the contract
-  console.log("Adding Task");
-  let tx = await taskManager.addTask("G1", "D1");
-  console.log("check1");
-  await tx.wait();
-  console.log("check2");
+
   const value = await taskManager.readTasks();
   console.log("Stored value is:", value);
   // console.log(taskManager.interface.getEvent("DoneFindingFreeBots").inputs);

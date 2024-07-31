@@ -1,0 +1,30 @@
+1. Setup blockchain
+   2.1 Network initialize
+   2.2 Deploy smart contract with correct RPC port
+   2.3 Initialize tasks using correct smart contract address
+
+2. Setup Robot Simulation
+   1.1 Multirobot simulation
+   1.2 Movement controller node
+   1.3 Ros bridge
+3. Start blockchain client-node interface
+
+4. Check RQT_GRAPH: ros_webserver need to be connected to movement controller node with topics
+
+Problems:
+
+1. 2.4 the message sending start before the node connect to rosbridge
+1. /taskAssign topic could be spammed, can use timestamp to prevent it (v)
+1. How to Received message => add delay to while loop, problem was the while loop runs, (v)
+1. Check the reporting to blockchain system (v)
+1. Why it show transaction failed? Need debugging. status is not available => try catch (v)
+1. Why the contract keep assigning to 1?
+1. The interaction is good for now! <3
+1. Build location system - firebase server with a storing system for offline working => firebase is only for changes of locations (v)
+1. Stop smart contract from revertin stage
+1. make sure the robot reuturn stage 1 only when it start the job successfully
+1. summarize the system
+1. Plan out what can be improved, and choose what to improve
+1. Plan out the thesis
+1. Propose to the teacher
+1. robot navigation, and code processing

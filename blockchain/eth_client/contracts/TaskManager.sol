@@ -5,6 +5,7 @@ contract TaskManager {
     
     // Declare struct
     struct Task {
+        uint id;
         string good;
         string destination;
         uint assigner;
@@ -33,7 +34,7 @@ contract TaskManager {
 
 
     function addTask(string calldata good, string calldata destination) external {
-        Task memory task = Task(good, destination, 0, 0);
+        Task memory task = Task(tasks.length, good, destination, 0, 0);
         tasks.push(task);
         assign();
     }
@@ -150,14 +151,14 @@ contract TaskManager {
 
         uint taskIter = 0;
         while (taskIter < tasks.length){
-            if (tasks[taskIter].assigner == uint(robotID)){
+            if (tasks[taskIter].assigner == uint(robotID) && tasks[taskIter].stage != 5){
                 return tasks[taskIter];
             }
             taskIter++;
         }
 
         // assign();
-        require(taskIter == tasks.length, '0:The robot is free!');
-        return Task('n','n',0,0);
+        require(taskIter != tasks.length, '0:The robot is free!');
+        return Task(0,'n','n',0,0);
     }
 }

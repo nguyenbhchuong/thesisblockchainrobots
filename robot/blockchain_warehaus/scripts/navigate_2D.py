@@ -2,6 +2,7 @@
 
 import rospy
 import actionlib
+import time
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from std_msgs.msg import String
 from std_msgs.msg import Int16;
@@ -56,16 +57,33 @@ def navigate(position, orientation, done_cb):
 def doTaskCallback(data):
     global isBusy
     global stage
+    global startTime
+    global endTime
+    trimData = data.data.split(';')
 
     if (isBusy == 1):
         print('robot is busy doing another task!!')
         return
+    
+    timeStamp = int(trimData[0])
+    print(timeStamp)
+    print('start', startTime)
+    print('end', endTime)
+
+    if (startTime != 0 and (timeStamp >= startTime and timeStamp <= endTime)):
+        return
+    
+    startTime = timeStamp
     isBusy = 1
+    stage = 1
+    pub.publish(stage)
+    
+    
     while not rospy.is_shutdown():
-        position_good = {"x": -2.16, "y" : 2.0, "z": 0.0}
+        position_good = {"x": int(trimData[1]), "y" : int(trimData[2]), "z": 0.0}
         orientation_good = {"x": 0.0, "y":  0.0, "z":  0.0, "w": 0.1}
 
-        position_deliver = {"x": 3, "y" : 2.0, "z": 0.0}
+        position_deliver = {"x": int(trimData[3]), "y" : int(trimData[4]), "z": 0.0}
         orientation_deliver = {"x": 0.0, "y":  0.0, "z":  0.0, "w": 0.1}
 
         #define callbacks
@@ -75,7 +93,7 @@ def doTaskCallback(data):
                 global good 
                 global stage
                 good = 1
-                stage = 1
+                stage = 2
                 pub.publish(stage)
 
         def done_nav_deliver_cb(status, result):
@@ -83,18 +101,20 @@ def doTaskCallback(data):
                 rospy.loginfo("Goal reached")
                 global good 
                 global stage
+                global endTime
                 good = 0
-                stage = 2
+                stage = 3
+                endTime = round(time.time() * 1000)
                 pub.publish(stage)
 
-        if (stage == 0):
+        if (stage == 1):
             navigate(position_good, orientation_good, done_nav_good_cb)
             #add update block
-        elif (stage == 1):
+        elif (stage == 2):
             print('check good', good)
             navigate(position_deliver, orientation_deliver, done_nav_deliver_cb)
             #add update block
-        elif (stage == 2):
+        elif (stage == 3):
             #add success block
             print('final good', good)
             isBusy = 0
@@ -107,6 +127,8 @@ if __name__ == "__main__":
     isBusy = 0
     good = 0
     stage = 0
+    startTime = 0
+    endTime = 0
 
     rospy.init_node('tb3_2_movement')
 

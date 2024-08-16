@@ -119,7 +119,7 @@ contract TaskManager {
 
         //check task assigner
         require(tasks[taskID].assigner == uint(robotID), '0:This robot is not doing this task!');
-
+        require(tasks[taskID].stage < stage, '2: This task has passed this stage!');
         //update task stage
         tasks[taskID].stage = stage;
 

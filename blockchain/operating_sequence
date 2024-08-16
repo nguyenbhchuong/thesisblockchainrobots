@@ -1,12 +1,13 @@
-1. Setup blockchain
+1. Setup Robot Simulation
+   1.1 Multirobot simulation
+   1.2 Movement controller node
+   1.3 Ros bridge
+
+2. Setup blockchain
    2.1 Network initialize
    2.2 Deploy smart contract with correct RPC port
    2.3 Initialize tasks using correct smart contract address
 
-2. Setup Robot Simulation
-   1.1 Multirobot simulation
-   1.2 Movement controller node
-   1.3 Ros bridge
 3. Start blockchain client-node interface
 
 4. Check RQT_GRAPH: ros_webserver need to be connected to movement controller node with topics
@@ -21,10 +22,27 @@ Problems:
 1. Why the contract keep assigning to 1?
 1. The interaction is good for now! <3
 1. Build location system - firebase server with a storing system for offline working => firebase is only for changes of locations (v)
-1. Stop smart contract from revertin stage
-1. make sure the robot reuturn stage 1 only when it start the job successfully
+1. Stop smart contract from revertin stage (v)
+1. make sure the robot return stage 1 only when it start the job successfully (v)
 1. summarize the system
 1. Plan out what can be improved, and choose what to improve
 1. Plan out the thesis
 1. Propose to the teacher
 1. robot navigation, and code processing
+1. deal with new robot registration and failure solving procedure (robot failure or enviromental failure).
+1. Discuss on signing method of validation: Receiver need to sign a transaction before taking a good from robot, robot uses that signature to update successful delivery.
+   The signature may associated with the good delivered
+1. Limitations: not into formation research
+1. map sharing for physical system: a cloud server for map?
+1. Time & Distance task allocation: need a map server, blockchain store robot locations, smart-contract connects to map server, smart-contract process path-finding & optimization
+1. Consider letting robot return to base while global idle value is high
+1. Measure task allocation effieciency by collecting metrics (distance travel) / tasks completed. The lower the net number of the system, the better task allocation is.
+
+transaction.data is function + parameter value in hex
+
+blockchain store the transaction history and the smart contract store the data
+
+Work left for today:
+
+- Simulate the whole system. (1h30)
+- Prepare a list of question. (2h)

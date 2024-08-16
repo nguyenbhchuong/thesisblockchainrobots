@@ -2,21 +2,22 @@ const { ethers } = require("hardhat");
 
 async function main() {
   const blockNumber = await ethers.provider.getBlockNumber();
-  
-  for (let i = 0; i < blockNumber; i++){
+
+  for (let i = 0; i < blockNumber; i++) {
     const block = await ethers.provider.getBlock(i);
 
     if (block.transactions.length === 0) {
       console.log("No transactions in the latest block.");
     } else {
       console.log("Transactions in the latest block:", block.transactions);
-      for (const txHash of block.transactions) {
-        const transaction = await ethers.provider.getTransaction(txHash);
-        console.log(`Transaction details for ${txHash}:`, transaction);
-      }
+      console.log(block);
+
+      // for (const txHash of block.transactions) {
+      //   const transaction = await ethers.provider.getTransaction(txHash);
+      //   console.log(`Transaction details for ${txHash}:`, transaction);
+      // }
     }
   }
-  
 }
 
 main()

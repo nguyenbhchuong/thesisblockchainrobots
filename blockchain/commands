@@ -3,3 +3,20 @@ kurtosis clean -a && kurtosis run --enclave local-eth-testnet github.com/ethpand
 sudo kurtosis clean -a && sudo kurtosis run --enclave local-eth-testnet github.com/ethpandaops/ethereum-package --args-file ~/blockchain/network_params.yaml
 
 sudo kurtosis clean -a && sudo kurtosis run --enclave local-eth-testnet github.com/ethpandaops/ethereum-package --args-file ./network_params.yaml
+
+ROS_HOSTNAME=172.16.134.162
+
+ssh -X to redirect GUI
+pcmanfm . to open file explorer
+
+onsite PC
+export ROS_MASTER_URI=http://172.16.131.110:11311
+export ROS_HOSTNAME=172.16.131.110
+export TURTLEBOT3_MODEL='burger'
+
+onsite Robot
+export ROS_MASTER_URI=http://172.16.131.110:11311
+export ROS_HOSTNAME=172.16.134.162
+export TURTLEBOT3_MODEL='burger'
+
+tf2_tools view_frames.py 

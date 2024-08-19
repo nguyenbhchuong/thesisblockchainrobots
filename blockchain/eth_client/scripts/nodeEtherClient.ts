@@ -14,7 +14,7 @@ const { doc, getDoc } = require("firebase/firestore");
 const { initializeApp } = require("firebase/app");
 const { getFirestore } = require("firebase/firestore");
 
-const contractAddress = "0xb4B46bdAA835F8E4b4d8e208B6559cD267851051"; // Replace with your deployed contract address
+const contractAddress = "0x422A3492e218383753D8006C7Bfa97815B44373F"; // Replace with your deployed contract address
 const nodeNumber = 1;
 
 let stageNumber: number = 0;

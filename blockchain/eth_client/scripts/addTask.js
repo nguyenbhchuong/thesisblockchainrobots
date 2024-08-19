@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  const contractAddress = "0xb4B46bdAA835F8E4b4d8e208B6559cD267851051"; // Replace with your deployed contract address
+  const contractAddress = "0x422A3492e218383753D8006C7Bfa97815B44373F"; // Replace with your deployed contract address
   const TaskManager = await ethers.getContractFactory("TaskManager");
   const taskManager = await TaskManager.attach(contractAddress);
 
@@ -16,7 +16,7 @@ async function main() {
 
   // Interact with the contract
   console.log("Adding Task");
-  let tx = await taskManager.addTask("G1", "D1");
+  let tx = await taskManager.addTask("Home", "D2");
   console.log("check1");
   await tx.wait();
   console.log("check2");

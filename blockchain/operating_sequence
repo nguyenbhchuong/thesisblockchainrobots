@@ -12,6 +12,19 @@
 
 4. Check RQT_GRAPH: ros_webserver need to be connected to movement controller node with topics
 
+10 terminal setup for physical robot:
+
+1. roscore
+2. bring up robot (pi)
+3. turtlebot navigation
+4. teleop
+5. blockchain navigator
+6. rosbridge webserver
+7. rqt_graph (optional monitor)
+8. topic echo (optional monitor)
+9. smart contract deploy and monitor
+10. blockchain client
+
 Problems:
 
 1. 2.4 the message sending start before the node connect to rosbridge
@@ -19,7 +32,7 @@ Problems:
 1. How to Received message => add delay to while loop, problem was the while loop runs, (v)
 1. Check the reporting to blockchain system (v)
 1. Why it show transaction failed? Need debugging. status is not available => try catch (v)
-1. Why the contract keep assigning to 1?
+1. Why the contract keep assigning to 1? (v)
 1. The interaction is good for now! <3
 1. Build location system - firebase server with a storing system for offline working => firebase is only for changes of locations (v)
 1. Stop smart contract from revertin stage (v)

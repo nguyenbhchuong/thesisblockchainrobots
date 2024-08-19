@@ -96,6 +96,7 @@ contract TaskManager {
             tasks[unassignedTasks[tasksIter]].stage = 1; // Mark task as assigned
             tasks[unassignedTasks[tasksIter]].assigner = freeBots[botsIter];
             robots[freeBots[botsIter]].status = 1;
+            roundRobin = freeBots[botsIter];
             botsIter++;
             tasksIter++;
         }

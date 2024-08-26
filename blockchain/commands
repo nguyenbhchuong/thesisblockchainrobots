@@ -4,6 +4,8 @@ sudo kurtosis clean -a && sudo kurtosis run --enclave local-eth-testnet github.c
 
 sudo kurtosis clean -a && sudo kurtosis run --enclave local-eth-testnet github.com/ethpandaops/ethereum-package --args-file ./network_params.yaml
 
+sudo kurtosis clean -a && cd ./ethereum-package && sudo kurtosis run --enclave local-eth-testnet . --args-file ./network_params.yaml
+
 ROS_HOSTNAME=172.16.134.162
 
 ssh -X to redirect GUI

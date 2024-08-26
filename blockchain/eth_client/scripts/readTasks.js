@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  const contractAddress = "0x422A3492e218383753D8006C7Bfa97815B44373F"; // Replace with your deployed contract address
+  const contractAddress = "0xEE0fCB8E5cCAD0b4197BAabd633333886f5C364d"; // Replace with your deployed contract address
   const TaskManager = await ethers.getContractFactory("TaskManager");
   const taskManager = await TaskManager.attach(contractAddress);
 
@@ -16,8 +16,11 @@ async function main() {
 
   // Interact with the contract
 
-  const value = await taskManager.readTasks();
-  console.log("Stored value is:", value);
+  const tasks = await taskManager.readTasks();
+  const robots = await taskManager.readRobots();
+
+  console.log("Stored tasks is:", tasks);
+  console.log("Stored robots is:", robots);
   // console.log(taskManager.interface.getEvent("DoneFindingFreeBots").inputs);
 }
 

@@ -3,7 +3,7 @@ import { BaseContract, ContractFactory, Signer } from "ethers";
 const { ethers } = require("hardhat");
 
 const contractAddress = "0xb4B46bdAA835F8E4b4d8e208B6559cD267851051"; // Replace with your deployed contract address
-const nodeNumber = 1;
+const nodeNumber = 0;
 
 async function main() {
   const TaskManager: ContractFactory = await ethers.getContractFactory(
@@ -22,18 +22,29 @@ async function main() {
   taskManager.on("DoneFindingNewTasks", (unassignedTasksID: number) => {
     console.log("Unassigned Tasks IDs:", unassignedTasksID);
   });
+
   taskManager.on("DoneFindingValidatingTasks", (unassignedTasksID: number) => {
     console.log("Validating Tasks IDs:", unassignedTasksID);
   });
 
+  taskManager.on("Check", (check: number) => {
+    console.log("Check result:", check);
+  });
+  taskManager.on("CheckU", (check: number) => {
+    console.log("CheckU result:", check);
+  });
+
   // Interact with the contract
   console.log("Adding Task");
-  let tx = await taskManagerRunner.updateTaskStatus(0, 5);
+  let tx = await taskManagerRunner.reportGoods(["ABC", "CCC", "KLC"], "D2");
   console.log("check1");
   await tx.wait();
   console.log("check2");
-  const value = await taskManagerRunner.readTasks();
-  console.log("Stored value is:", value);
+  const tasks = await taskManagerRunner.readTasks();
+  const robots = await taskManagerRunner.readRobots();
+
+  console.log("Stored tasks is:", tasks);
+  console.log("Stored robots is:", robots);
   // console.log(taskAssigner.interface.getEvent("DoneFindingFreeBots").inputs);
 }
 

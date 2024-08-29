@@ -1,8 +1,9 @@
 import { BaseContract, ContractFactory, Signer } from "ethers";
+const { contractAddress } = require("./contractAddress");
 
 const { ethers } = require("hardhat");
 
-const contractAddress = "0xb4B46bdAA835F8E4b4d8e208B6559cD267851051"; // Replace with your deployed contract address
+// const contractAddress = "0xb4B46bdAA835F8E4b4d8e208B6559cD267851051"; // Replace with your deployed contract address
 const nodeNumber = 1;
 
 async function main() {
@@ -28,7 +29,11 @@ async function main() {
 
   // Interact with the contract
   console.log("Adding Task");
-  let tx = await taskManagerRunner.updateTaskStatus(0, 5);
+  let tx = await taskManagerRunner.updateTaskStatus(
+    0,
+    5,
+    Math.round(Date.now() / 1000)
+  );
   console.log("check1");
   await tx.wait();
   console.log("check2");

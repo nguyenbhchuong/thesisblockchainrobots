@@ -78,12 +78,12 @@ const blockchainNodeSetup = async () => {
 
   let taskAssign = new ROSLIB.Topic({
     ros: ros,
-    name: "/taskAssign",
+    name: `/taskAssign_${nodeNumber}`
     messageType: "std_msgs/String",
   });
   let taskReport = new ROSLIB.Topic({
     ros: ros,
-    name: "/taskReport",
+    name: `/taskReport_${nodeNumber}`,
     messageType: "std_msgs/Int16",
   });
 

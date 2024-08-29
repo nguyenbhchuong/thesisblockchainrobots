@@ -1,7 +1,8 @@
 const { ethers } = require("hardhat");
+const { contractAddress } = require("./contractAddress");
 
 async function main() {
-  const contractAddress = "0xEE0fCB8E5cCAD0b4197BAabd633333886f5C364d"; // Replace with your deployed contract address
+  // const contractAddress = "0xEE0fCB8E5cCAD0b4197BAabd633333886f5C364d"; // Replace with your deployed contract address
   const TaskManager = await ethers.getContractFactory("TaskManager");
   const taskManager = await TaskManager.attach(contractAddress);
 

@@ -10,7 +10,7 @@ import {
 // const ROSLIB = require("roslib");
 import ROSLIB from "roslib";
 const { ethers } = require("hardhat");
-const { doc, getDoc } = require("firebase/firestore");
+const { doc, getDoc, updateDoc } = require("firebase/firestore");
 const { initializeApp } = require("firebase/app");
 const { getFirestore } = require("firebase/firestore");
 const { contractAddress } = require("../contractAddress");
@@ -79,12 +79,12 @@ const blockchainNodeSetup = async () => {
 
   let taskAssign = new ROSLIB.Topic({
     ros: ros,
-    name: "/taskAssign_1",
+    name: `/taskAssign_${nodeNumber}`,
     messageType: "std_msgs/String",
   });
   let taskReport = new ROSLIB.Topic({
     ros: ros,
-    name: "/taskReport_1",
+    name: `/taskReport_${nodeNumber}`,
     messageType: "std_msgs/Int16",
   });
 
@@ -120,6 +120,31 @@ const getDocument = async (locationName: string) => {
     // docSnap.data() will be undefined in this case
     console.log("No such document!");
   }
+};
+
+const checkAndTakeGood = async (locationName: string, goodID: string) => {
+  const goodList = (await getDocument(locationName)).good;
+  if (goodList.includes(goodID)) {
+    const docRef = doc(db, "location", locationName);
+    const index = goodList.indexOf(goodID);
+    if (index > -1) {
+      goodList.splice(index, 1);
+    } else {
+      throw "no good to take";
+    }
+    await updateDoc(docRef, {
+      good: goodList,
+    });
+  }
+};
+
+const checkAndGiveGood = async (locationName: string, goodID: string) => {
+  const goodList = (await getDocument(locationName)).good;
+  const docRef = doc(db, "location", locationName);
+  goodList.push(goodID);
+  await updateDoc(docRef, {
+    good: goodList,
+  });
 };
 
 async function main() {
@@ -166,34 +191,81 @@ async function main() {
 
     if (stageNumber == 1) {
       try {
-        let tx = await taskManagerRunner.updateTaskStatus(taskValue[0], 2);
+        let tx = await taskManagerRunner.updateTaskStatus(
+          taskValue[0],
+          2,
+          Math.round(Date.now() / 1000)
+        );
         await tx.wait();
-        console.log("Transaction was successful");
+        console.log("Receiving Task was successful");
         stageNumber = -1;
       } catch (error) {
         console.log("Transaction failed:", error);
+        stageNumber = 0;
       }
     }
 
     if (stageNumber == 2) {
       try {
-        let tx = await taskManagerRunner.updateTaskStatus(taskValue[0], 3);
+        const goodPosition = await getDocument(taskValue[2]);
+
+        await checkAndTakeGood(taskValue[2], taskValue[1]); //goodPosition and goodID
+
+        let tx = await taskManagerRunner.updateTaskStatus(
+          taskValue[0],
+          3,
+          Math.round(Date.now() / 1000)
+        );
         await tx.wait();
-        console.log("Transaction was successful");
+
+        let txValidate = await taskManagerRunner.reportGoods(
+          goodPosition.good,
+          taskValue[2]
+        );
+        await txValidate.wait();
+
+        console.log("Receiving Good was successful");
         stageNumber = -1;
       } catch (error) {
-        console.log("Transaction failed:", error);
+        console.log("Receiving Good failed:", error);
+        let tx = await taskManagerRunner.updateTaskStatus(
+          taskValue[0],
+          4,
+          Math.round(Date.now() / 1000)
+        );
+        stageNumber = 0;
       }
     }
 
     if (stageNumber == 3) {
       try {
-        let tx = await taskManagerRunner.updateTaskStatus(taskValue[0], 5);
+        const deliverPosition = await getDocument(taskValue[3]);
+
+        await checkAndGiveGood(taskValue[3], taskValue[1]);
+
+        let tx = await taskManagerRunner.updateTaskStatus(
+          taskValue[0],
+          5,
+          Math.round(Date.now() / 1000)
+        );
         await tx.wait();
+
+        let txValidate = await taskManagerRunner.reportGoods(
+          deliverPosition.good,
+          taskValue[3]
+        );
+        await txValidate.wait();
+
         console.log("Transaction was successful");
         stageNumber = 0;
       } catch (error) {
         console.log("Transaction failed:", error);
+        let tx = await taskManagerRunner.updateTaskStatus(
+          taskValue[0],
+          4,
+          Math.round(Date.now() / 1000)
+        );
+        stageNumber = 0;
       }
     }
 

@@ -9,9 +9,14 @@ contract TaskManager {
         string good;
         string origin;
         string destination;
+
         uint assigner;
         uint validator;
         uint stage;
+
+        uint timeIssued;
+        uint timeStarted;
+        uint timeDelivered;
     }
 
     struct Robot {
@@ -37,10 +42,10 @@ contract TaskManager {
         robots.push(Robot({node_address: 0x614561D2d143621E126e87831AEF287678B442b8, status: 0, credit: 3}));
         robots.push(Robot({node_address: 0xf93Ee4Cf8c6c40b329b0c0626F28333c132CF241, status: 0, credit: 3}));
     }
+    //uint timeIssued
 
-
-    function addTask(string calldata good, string calldata origin, string calldata destination) external {
-        Task memory task = Task(tasks.length, good, origin, destination, 0, 0, 0);
+    function addTask(string calldata good, string calldata origin, string calldata destination, uint timeIssued) external {
+        Task memory task = Task(tasks.length, good, origin, destination, 0, 0, 0, timeIssued, 0, 0);
         tasks.push(task);
         assign();
     }
@@ -101,6 +106,7 @@ contract TaskManager {
         while (tasksIter < unassignedTasks.length && botsIter < freeBots.length) {
             tasks[unassignedTasks[tasksIter]].stage = 1; // Mark task as assigned
             tasks[unassignedTasks[tasksIter]].assigner = freeBots[botsIter];
+            // tasks[unassignedTasks[tasksIter]].timeAssigned = block.timestamp;
             robots[freeBots[botsIter]].status = 1;
             roundRobin = freeBots[botsIter];
             botsIter++;
@@ -110,7 +116,7 @@ contract TaskManager {
     }
 
 
-    function updateTaskStatus(uint taskID, uint stage) external {
+    function updateTaskStatus(uint taskID, uint stage, uint timeStamp) external {
         //check robot id
         int robotID = -1;
         uint robotsIter = 0;
@@ -133,9 +139,11 @@ contract TaskManager {
         //update robot status
         if (stage == 2){
             robots[uint(robotID)].credit -= 1;
+            tasks[taskID].timeStarted = timeStamp;
         }
         if (stage == 5){
             robots[uint(robotID)].status = 0;
+            tasks[taskID].timeDelivered = timeStamp;
         }
 
         assign();
@@ -246,6 +254,6 @@ contract TaskManager {
 
         // assign();
         require(taskIter != tasks.length, '0:The robot is free!');
-        return Task(0,'n','n', 'n', 0, 0, 0);
+        return Task(0,'n','n', 'n', 0, 0, 0, 0, 0, 0);
     }
 }

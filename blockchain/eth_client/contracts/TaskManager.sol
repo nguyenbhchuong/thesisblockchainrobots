@@ -146,6 +146,10 @@ contract TaskManager {
             tasks[taskID].timeDelivered = timeStamp;
         }
 
+        if (stage == 4){
+            robots[uint(robotID)].status = 0;            
+        }
+
         assign();
     }
 
@@ -243,10 +247,11 @@ contract TaskManager {
         }
 
         require(robotID != -1, '1:No such robot!');
+        require(robots[uint(robotID)].status != 0, '0:The robot is free!');
 
         uint taskIter = 0;
         while (taskIter < tasks.length){
-            if (tasks[taskIter].assigner == uint(robotID) && tasks[taskIter].stage != 5){
+            if (tasks[taskIter].assigner == uint(robotID) && tasks[taskIter].stage < 4){
                 return tasks[taskIter];
             }
             taskIter++;

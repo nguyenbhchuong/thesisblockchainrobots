@@ -152,82 +152,124 @@ async function main() {
     await blockchainNodeSetup();
 
   while (true) {
-    if (stageNumber == 0) {
-      //get task
+    try {
+      if (stageNumber == 0) {
+        //get task
 
-      taskValue = null;
-      try {
-        taskValue = await taskManagerRunner.getOwnTask();
-        console.log("get task result", taskValue);
-      } catch (error: any) {
-        console.error(error);
-        console.log(error.message);
-        const code = +error.message.split(":")[1];
-        console.log("check code", code);
-        if (code == 0) {
-          await delay(2000);
-        } else {
-          return;
+        taskValue = null;
+        try {
+          taskValue = await taskManagerRunner.getOwnTask();
+          console.log("get task result", taskValue);
+        } catch (error: any) {
+          console.error(error);
+          console.log(error.message);
+          const code = +error.message.split(":")[1];
+          console.log("check code", code);
+          if (code == 0) {
+            await delay(2000);
+          }
+        }
+
+        //start job
+        if (taskValue == null) {
+          continue;
+        }
+        const timeStamp = Date.now();
+        const goodPosition = await getDocument(taskValue[2]);
+        const deliveryPosition = await getDocument(taskValue[3]);
+        console.log(
+          "message: ",
+          `${timeStamp};${goodPosition.x};${goodPosition.y};${deliveryPosition.x};${deliveryPosition.y}`
+        );
+        let message = new ROSLIB.Message({
+          data: `${timeStamp};${goodPosition.x};${goodPosition.y};${deliveryPosition.x};${deliveryPosition.y}`,
+        });
+        taskAssign.publish(message);
+        console.log("done publish!");
+      }
+
+      if (stageNumber == 1) {
+        try {
+          let tx = await taskManagerRunner.updateTaskStatus(
+            taskValue[0],
+            2,
+            Math.round(Date.now() / 1000)
+          );
+          await tx.wait();
+          console.log("Receiving Task was successful");
+          stageNumber = -1;
+        } catch (error) {
+          console.log("Transaction failed:", error);
+          stageNumber = 0;
         }
       }
 
-      //start job
-      if (taskValue == null) {
-        continue;
+      if (stageNumber == 2) {
+        try {
+          const goodPosition = await getDocument(taskValue[2]);
+
+          await checkAndTakeGood(taskValue[2], taskValue[1]); //goodPosition and goodID
+
+          let tx = await taskManagerRunner.updateTaskStatus(
+            taskValue[0],
+            3,
+            Math.round(Date.now() / 1000)
+          );
+          await tx.wait();
+
+          let txValidate = await taskManagerRunner.reportGoods(
+            goodPosition.good,
+            taskValue[2]
+          );
+          await txValidate.wait();
+
+          console.log("Receiving Good was successful");
+          stageNumber = -1;
+        } catch (error) {
+          console.log("Receiving Good failed:", error);
+          let tx = await taskManagerRunner.updateTaskStatus(
+            taskValue[0],
+            4,
+            Math.round(Date.now() / 1000)
+          );
+          stageNumber = 0;
+        }
       }
-      const timeStamp = Date.now();
-      const goodPosition = await getDocument(taskValue[2]);
-      const deliveryPosition = await getDocument(taskValue[3]);
-      console.log(
-        "message: ",
-        `${timeStamp};${goodPosition.x};${goodPosition.y};${deliveryPosition.x};${deliveryPosition.y}`
-      );
-      let message = new ROSLIB.Message({
-        data: `${timeStamp};${goodPosition.x};${goodPosition.y};${deliveryPosition.x};${deliveryPosition.y}`,
-      });
-      taskAssign.publish(message);
-      console.log("done publish!");
-    }
 
-    if (stageNumber == 1) {
-      try {
-        let tx = await taskManagerRunner.updateTaskStatus(
-          taskValue[0],
-          2,
-          Math.round(Date.now() / 1000)
-        );
-        await tx.wait();
-        console.log("Receiving Task was successful");
-        stageNumber = -1;
-      } catch (error) {
-        console.log("Transaction failed:", error);
-        stageNumber = 0;
+      if (stageNumber == 3) {
+        try {
+          const deliverPosition = await getDocument(taskValue[3]);
+
+          await checkAndGiveGood(taskValue[3], taskValue[1]);
+
+          let tx = await taskManagerRunner.updateTaskStatus(
+            taskValue[0],
+            5,
+            Math.round(Date.now() / 1000)
+          );
+          await tx.wait();
+
+          let txValidate = await taskManagerRunner.reportGoods(
+            deliverPosition.good,
+            taskValue[3]
+          );
+          await txValidate.wait();
+
+          console.log("Transaction was successful");
+          stageNumber = 0;
+        } catch (error) {
+          console.log("Transaction failed:", error);
+          let tx = await taskManagerRunner.updateTaskStatus(
+            taskValue[0],
+            4,
+            Math.round(Date.now() / 1000)
+          );
+          stageNumber = 0;
+        }
       }
-    }
 
-    if (stageNumber == 2) {
-      try {
-        const goodPosition = await getDocument(taskValue[2]);
-
-        await checkAndTakeGood(taskValue[2], taskValue[1]); //goodPosition and goodID
-
-        let tx = await taskManagerRunner.updateTaskStatus(
-          taskValue[0],
-          3,
-          Math.round(Date.now() / 1000)
-        );
-        await tx.wait();
-
-        let txValidate = await taskManagerRunner.reportGoods(
-          goodPosition.good,
-          taskValue[2]
-        );
-        await txValidate.wait();
-
-        console.log("Receiving Good was successful");
-        stageNumber = -1;
-      } catch (error) {
-        console.log("Receiving Good failed:", error);
+      if (stageNumber == -2) {
+        console.log("Task Error", error);
         let tx = await taskManagerRunner.updateTaskStatus(
           taskValue[0],
           4,
@@ -235,38 +277,9 @@ async function main() {
         );
         stageNumber = 0;
       }
-    }
-
-    if (stageNumber == 3) {
-      try {
-        const deliverPosition = await getDocument(taskValue[3]);
-
-        await checkAndGiveGood(taskValue[3], taskValue[1]);
-
-        let tx = await taskManagerRunner.updateTaskStatus(
-          taskValue[0],
-          5,
-          Math.round(Date.now() / 1000)
-        );
-        await tx.wait();
-
-        let txValidate = await taskManagerRunner.reportGoods(
-          deliverPosition.good,
-          taskValue[3]
-        );
-        await txValidate.wait();
-
-        console.log("Transaction was successful");
-        stageNumber = 0;
-      } catch (error) {
-        console.log("Transaction failed:", error);
-        let tx = await taskManagerRunner.updateTaskStatus(
-          taskValue[0],
-          4,
-          Math.round(Date.now() / 1000)
-        );
-        stageNumber = 0;
-      }
+    } catch (error) {
+      console.log("global error:", error);
+      stageNumber = 0;
     }
 
     await delay(1000);

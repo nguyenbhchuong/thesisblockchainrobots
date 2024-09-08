@@ -22,3 +22,21 @@ export ROS_HOSTNAME=172.16.134.162
 export TURTLEBOT3_MODEL='burger'
 
 tf2_tools view_frames.py 
+
+roscore -p
+bridge port:=9091
+
+webUI:
+1. ABI
+2. Contract Address
+
+192.168.199.158
+
+1. 172.16.129.184 172.16.129.142
+export ROS_MASTER_URI=http://172.16.131.110:11313
+2. 172.16.133.217 
+export ROS_MASTER_URI=http://172.16.131.110:11312
+3. 172.16.128.249 172.16.128.199
+export ROS_MASTER_URI=http://172.16.131.110:11311
+
+export ROS_MASTER_URI=http://172.16.131.110:11311

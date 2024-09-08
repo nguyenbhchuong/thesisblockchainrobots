@@ -16,8 +16,8 @@
 
 1. roscore
 2. bring up robot (pi)
-3. turtlebot navigation
-4. teleop
+3. turtlebot navigation 
+4. teleop 
 5. blockchain navigator
 6. rosbridge webserver
 7. rqt_graph (optional monitor)

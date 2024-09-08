@@ -62,7 +62,7 @@ const blockchainNodeSetup = async () => {
   console.log("START ROS SETUP");
 
   //ROS setup
-  let ros = new ROSLIB.Ros({ url: "ws://localhost:9090" });
+  let ros = new ROSLIB.Ros({ url: "ws://localhost:9091" });
 
   ros.on("connection", function () {
     console.log("successfully connected!");
@@ -267,6 +267,16 @@ async function main() {
         );
         stageNumber = 0;
       }
+    }
+
+    if (stageNumber == -2) {
+      console.log("Task Error", error);
+      let tx = await taskManagerRunner.updateTaskStatus(
+        taskValue[0],
+        4,
+        Math.round(Date.now() / 1000)
+      );
+      stageNumber = 0;
     }
 
     await delay(1000);

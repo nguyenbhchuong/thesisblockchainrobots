@@ -21,9 +21,9 @@ const nodeNumber = 2;
 let stageNumber: number = 0;
 let taskValue: any = null;
 
-let timeOutClock = 0;
-let isCountingDown = false;
-const timeoutLimit = 30;
+// let timeOutClock = 0;
+// let isCountingDown = false;
+// const timeoutLimit = 30;
 
 // setup firebase
 const firebaseConfig = {
@@ -97,9 +97,11 @@ const blockchainNodeSetup = async () => {
     console.log(message.data);
     const data = message.data;
 
+    //-2 means error in navigator
+    //-3 means timeout
     stageNumber = data;
-    timeOutClock = 0;
-    isCountingDown = true;
+    // timeOutClock = 0;
+    // isCountingDown = true;
   });
 
   console.log("DONE ROS SETUP");
@@ -298,7 +300,7 @@ async function main() {
       stageNumber = 0;
     }
 
-    if (timeOutClock > timeoutLimit && isCountingDown) {
+    if (stageNumber == -3) {
       let tx = await taskManagerRunner.updateTaskStatus(
         taskValue[0],
         405,
@@ -306,11 +308,20 @@ async function main() {
       );
       await tx.wait();
       stageNumber = 0;
-      timeOutClock = 0;
-      isCountingDown = false;
-    } else {
-      timeOutClock++;
     }
+    // if (timeOutClock > timeoutLimit && isCountingDown) {
+    //   let tx = await taskManagerRunner.updateTaskStatus(
+    //     taskValue[0],
+    //     405,
+    //     Math.round(Date.now() / 1000)
+    //   );
+    //   await tx.wait();
+    //   stageNumber = 0;
+    //   timeOutClock = 0;
+    //   isCountingDown = false;
+    // } else {
+    //   timeOutClock++;
+    // }
 
     await delay(1000);
   }

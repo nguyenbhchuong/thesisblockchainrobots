@@ -38,9 +38,9 @@ contract TaskManager {
     event CheckU(uint check);
 
     constructor() {
-        robots.push(Robot({node_address: 0x8943545177806ED17B9F23F0a21ee5948eCaa776, status: 0, credit: 3}));
-        robots.push(Robot({node_address: 0x614561D2d143621E126e87831AEF287678B442b8, status: 0, credit: 3}));
-        robots.push(Robot({node_address: 0xf93Ee4Cf8c6c40b329b0c0626F28333c132CF241, status: 0, credit: 3}));
+        robots.push(Robot({node_address: 0x8943545177806ED17B9F23F0a21ee5948eCaa776, status: 0, credit: 5}));
+        robots.push(Robot({node_address: 0x614561D2d143621E126e87831AEF287678B442b8, status: 0, credit: 5}));
+        robots.push(Robot({node_address: 0xf93Ee4Cf8c6c40b329b0c0626F28333c132CF241, status: 0, credit: 5}));
     }
     //uint timeIssued
 
@@ -61,7 +61,7 @@ contract TaskManager {
             if (i >= robots.length) {
                 i = 0;
             }
-            if (robots[i].status == 0) {
+            if (robots[i].status == 0 && robots[i].credit > 0) {
                 freeBotsID[freeBotCount] = i;
                 freeBotCount++;
             }
@@ -115,7 +115,6 @@ contract TaskManager {
         //#endregion        
     }
 
-
     function updateTaskStatus(uint taskID, uint stage, uint timeStamp) external {
         //check robot id
         int robotID = -1;
@@ -134,7 +133,13 @@ contract TaskManager {
         require(tasks[taskID].assigner == uint(robotID), '0:This robot is not doing this task!');
         require(tasks[taskID].stage < stage, '2: This task has passed this stage!');
         //update task stage
-        tasks[taskID].stage = stage;
+        if (stage > 399){
+            robots[uint(robotID)].status = 0; 
+            tasks[taskID].stage = stage + tasks[taskID].stage * 10;
+        } else {
+            tasks[taskID].stage = stage;
+        }
+        
 
         //update robot status
         if (stage == 2){
@@ -146,9 +151,7 @@ contract TaskManager {
             tasks[taskID].timeDelivered = timeStamp;
         }
 
-        if (stage == 4){
-            robots[uint(robotID)].status = 0;            
-        }
+        
 
         assign();
     }

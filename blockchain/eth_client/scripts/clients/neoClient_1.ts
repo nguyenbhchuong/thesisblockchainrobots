@@ -13,7 +13,7 @@ const { ethers } = require("hardhat");
 const { doc, getDoc, updateDoc } = require("firebase/firestore");
 const { initializeApp } = require("firebase/app");
 const { getFirestore } = require("firebase/firestore");
-const { contractAddress } = require("./contractAddress");
+const { contractAddress } = require("../contractAddress");
 
 // const contractAddress = "0x422A3492e218383753D8006C7Bfa97815B44373F"; // Replace with your deployed contract address
 const nodeNumber = 1;
@@ -66,7 +66,7 @@ const blockchainNodeSetup = async () => {
   console.log("START ROS SETUP");
 
   //ROS setup
-  let ros = new ROSLIB.Ros({ url: "ws://localhost:9090" });
+  let ros = new ROSLIB.Ros({ url: "ws://localhost:9091" });
 
   ros.on("connection", function () {
     console.log("successfully connected!");
@@ -96,12 +96,11 @@ const blockchainNodeSetup = async () => {
     console.log("Received message on " + taskReport.name + ": ");
     console.log(message.data);
     const data = message.data;
-
-    //-2 means error in navigator
-    //-3 means timeout
-    stageNumber = data;
-    // timeOutClock = 0;
-    // isCountingDown = true;
+    if (data >= 0) {
+      stageNumber = data + 1;
+    } else {
+      stageNumber = data;
+    }
   });
 
   console.log("DONE ROS SETUP");
@@ -184,16 +183,16 @@ async function main() {
         }
         const timeStamp = Date.now();
         const goodPosition = await getDocument(taskValue[2]);
-        const deliveryPosition = await getDocument(taskValue[3]);
+
         console.log(
           "message: ",
-          `${timeStamp};${goodPosition.x};${goodPosition.y};${deliveryPosition.x};${deliveryPosition.y}`
+          `${timeStamp};${goodPosition.x};${goodPosition.y}`
         );
         let message = new ROSLIB.Message({
-          data: `${timeStamp};${goodPosition.x};${goodPosition.y};${deliveryPosition.x};${deliveryPosition.y}`,
+          data: `${timeStamp};${goodPosition.x};${goodPosition.y};${stageNumber}`,
         });
         taskAssign.publish(message);
-        console.log("done publish!");
+        console.log("done start publish!");
       }
 
       if (stageNumber == 1) {
@@ -205,6 +204,7 @@ async function main() {
           );
           await tx.wait();
           console.log("Receiving Task was successful");
+
           stageNumber = -1;
         } catch (error) {
           console.log("Transaction failed:", error);
@@ -214,6 +214,9 @@ async function main() {
 
       if (stageNumber == 2) {
         try {
+          const timeStamp = Date.now();
+          const deliveryPosition = await getDocument(taskValue[3]);
+
           const goodPosition = await getDocument(taskValue[2]);
 
           await checkAndTakeGood(taskValue[2], taskValue[1]); //goodPosition and goodID
@@ -231,6 +234,12 @@ async function main() {
           );
           await txValidate.wait();
 
+          let message = new ROSLIB.Message({
+            data: `${timeStamp};${deliveryPosition.x};${deliveryPosition.y};${stageNumber}`,
+          });
+          taskAssign.publish(message);
+          console.log("done delivery publish!");
+
           console.log("Receiving Good was successful");
           stageNumber = -1;
         } catch (error) {
@@ -247,6 +256,9 @@ async function main() {
       }
 
       if (stageNumber == 3) {
+        console.log("recieved delivery goal");
+      }
+      if (stageNumber == 4) {
         try {
           const deliverPosition = await getDocument(taskValue[3]);
 
@@ -267,6 +279,17 @@ async function main() {
 
           console.log("Transaction was successful");
           stageNumber = 0;
+
+          const timeStamp = Date.now();
+
+          const deliveryPosition = await getDocument(taskValue[3]);
+          let message = new ROSLIB.Message({
+            data: `${timeStamp};${deliveryPosition.x - 0.5};${
+              deliveryPosition.y + 0.5
+            };${100}`,
+          }); // get away from the delivery spot
+          taskAssign.publish(message);
+          console.log("done delivery publish!");
         } catch (error) {
           console.log("Transaction failed:", error);
           let tx = await taskManagerRunner.updateTaskStatus(
@@ -289,39 +312,40 @@ async function main() {
         await tx.wait();
         stageNumber = 0;
       }
+      if (stageNumber == -3) {
+        let tx = await taskManagerRunner.updateTaskStatus(
+          taskValue[0],
+          405,
+          Math.round(Date.now() / 1000)
+        );
+        await tx.wait();
+        stageNumber = 0;
+      }
+      if (stageNumber == 102) {
+        stageNumber = 0;
+      }
     } catch (error) {
       console.log("global error:", error);
-      let tx = await taskManagerRunner.updateTaskStatus(
-        taskValue[0],
-        400,
-        Math.round(Date.now() / 1000)
-      );
-      await tx.wait();
-      stageNumber = 0;
-    }
+      let message = new ROSLIB.Message({
+        data: `${-1}`,
+      });
+      console.log("published error!");
 
-    if (stageNumber == -3) {
-      let tx = await taskManagerRunner.updateTaskStatus(
-        taskValue[0],
-        405,
-        Math.round(Date.now() / 1000)
-      );
-      await tx.wait();
+      taskAssign.publish(message);
+      console.log("client error!");
+      try {
+        let tx = await taskManagerRunner.updateTaskStatus(
+          taskValue[0],
+          400,
+          Math.round(Date.now() / 1000)
+        );
+        await tx.wait();
+      } catch (error) {
+        console.log("The error occured not related to any task!");
+      }
+
       stageNumber = 0;
     }
-    // if (timeOutClock > timeoutLimit && isCountingDown) {
-    //   let tx = await taskManagerRunner.updateTaskStatus(
-    //     taskValue[0],
-    //     405,
-    //     Math.round(Date.now() / 1000)
-    //   );
-    //   await tx.wait();
-    //   stageNumber = 0;
-    //   timeOutClock = 0;
-    //   isCountingDown = false;
-    // } else {
-    //   timeOutClock++;
-    // }
 
     await delay(1000);
   }

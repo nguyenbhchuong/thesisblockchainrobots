@@ -18,9 +18,9 @@ async function main() {
   // Interact with the contract
   console.log("Adding Task");
   let tx = await taskManager.addTask(
-    "K",
-    "G1",
-    "Home",
+    "I",
+    "G2",
+    "D1",
     Math.round(Date.now() / 1000)
   );
   console.log("check1");

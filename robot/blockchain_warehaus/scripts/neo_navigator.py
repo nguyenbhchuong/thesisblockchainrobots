@@ -6,6 +6,7 @@ import time
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from std_msgs.msg import String
 from std_msgs.msg import Int16;
+import threading
 
 
 # Callbacks definition
@@ -29,7 +30,7 @@ def feedback_cb(feedback):
 
 def navigate(position, orientation, done_cb):
     # navclient = actionlib.SimpleActionClient('move_base',MoveBaseAction)
-    navclient = actionlib.SimpleActionClient('tb3_2/move_base',MoveBaseAction)
+    global navclient
 
     navclient.wait_for_server()
 
@@ -55,6 +56,16 @@ def navigate(position, orientation, done_cb):
     else:
         rospy.loginfo ( navclient.get_result())
         return True
+    
+def callThread(data):
+    global t1
+    try:
+        t1.join()
+    except:
+        print('no thread is running')
+    finally:
+        t1 = threading.Thread(doTaskCallback, args=(data,))
+        t1.start()
 
 def doTaskCallback(data):
     try:
@@ -69,9 +80,15 @@ def doTaskCallback(data):
             return
         
         timeStamp = int(trimData[0])
+        taskStage = int(trimData[3])
         print(timeStamp)
         print('start', startTime)
         print('end', endTime)
+
+        if (timeStamp == -1):
+            global navclient
+            navclient.cancel_all_goals()
+            return
 
         if (startTime != 0 and (timeStamp >= startTime and timeStamp <= endTime)):
             return
@@ -80,74 +97,46 @@ def doTaskCallback(data):
         isBusy = 1
         stage = 1
 
-        position_home = {"x": 0, "y": 0, "z": 0}
-        orientation_home = {"x": 0.0, "y":  0.0, "z":  0.0, "w": 0.1}
-
         position_good = {"x": float(trimData[1]), "y" : float(trimData[2]), "z": 0.0}
         orientation_good = {"x": 0.0, "y":  0.0, "z":  0.0, "w": 0.1}
 
-        position_deliver = {"x": float(trimData[3]), "y" : float(trimData[4]), "z": 0.0}
-        orientation_deliver = {"x": 0.0, "y":  0.0, "z":  0.0, "w": 0.1}
-
-        pub.publish(stage)
         
-        while not rospy.is_shutdown():
-            #define callbacks
-            def timeoutResolve():
-                global isBusy
+        rospy.loginfo('received task!')
+        pub.publish(0)
+        
+        #define callbacks
+        def timeoutResolve():
+            global isBusy
+            global endTime
+            isBusy = 0
+            endTime = round(time.time() * 1000)
+            print('TIMEOUT! or FAILURE!')
+            pub.publish(-3)
+            #-3 means timeout
+
+        def done_nav_deliver_cb(status, result):
+            if status == 3:
+                rospy.loginfo("the goal is reached!")
+                global stage
                 global endTime
-                isBusy = 0
+                stage = 2
                 endTime = round(time.time() * 1000)
-                print('TIMEOUT! or FAILURE!')
-                pub.publish(-3)
-                #-3 means timeout
+                pub.publish(taskStage)
 
-            def done_nav_good_cb(status, result):
-                if status == 3:
-                    rospy.loginfo("good reached")
-                    global good 
-                    global stage
-                    good = 1
-                    stage = 2
-                    pub.publish(stage)
-
-            def done_nav_deliver_cb(status, result):
-                if status == 3:
-                    rospy.loginfo("delivery reached")
-                    global good 
-                    global stage
-                    global endTime
-                    good = 0
-                    stage = 3
-                    endTime = round(time.time() * 1000)
-                    pub.publish(stage)
-
-            def arrive_home(status, result):
-                if status == 3:
-                    rospy.loginfo("home")
-                    
+        while not rospy.is_shutdown():
+                
             if (stage == 1):
-                result1 = navigate(position_good, orientation_good, done_nav_good_cb)
+                result1 = navigate(position_good, orientation_good, done_nav_deliver_cb)
                 if not result1:
                     timeoutResolve()
                     break
-
-                #add update block
             elif (stage == 2):
-                print('check good', good)
-                result2 = navigate(position_deliver, orientation_deliver, done_nav_deliver_cb)
-                if not result2:
-                    timeoutResolve()
-                    break
-
-                #add update block
-            elif (stage == 3):
                 #add success block
-                print('final good', good)
-                result3 = navigate(position_home, orientation_home, arrive_home)
+                print('finished')
                 isBusy = 0
                 stage = 0
                 break
+            
     except BaseException as err:
         print('navigator error in do task callback - should rebound',err)
         isBusy = 0
@@ -157,10 +146,11 @@ def doTaskCallback(data):
 
 
 pub = rospy.Publisher('taskReport', Int16, queue_size=10)
+navclient = actionlib.SimpleActionClient('tb3_2/move_base',MoveBaseAction)
+t1 = None
 
 if __name__ == "__main__":
     isBusy = 0
-    good = 0
     stage = 0
     startTime = 0
     endTime = 0

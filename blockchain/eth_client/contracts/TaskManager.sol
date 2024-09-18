@@ -219,7 +219,9 @@ contract TaskManager {
                 tasks[doneTasks[checkIter]].validator = uint(robotID);
                 tasks[doneTasks[checkIter]].stage = 6;
             } else {
-                robots[tasks[doneTasks[checkIter]].assigner].credit -= 2;
+                if (robots[tasks[doneTasks[checkIter]].assigner].credit >= 2){
+                    robots[tasks[doneTasks[checkIter]].assigner].credit -= 2;
+                }
                 tasks[doneTasks[checkIter]].validator = uint(robotID);
                 tasks[doneTasks[checkIter]].stage = 7;
             }

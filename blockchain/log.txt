@@ -1,0 +1,1132 @@
+chuong@chuong-Latitude-5491:~/thesisblockchainrobots/blockchain/eth_client/scripts/clients$ npx hardhat run neoClient_0.ts --network localnet
+START FIREBASE SETUP
+DONE BLOCKCHAIN SETUP
+START BLOCKCHAIN SETUP
+DONE BLOCKCHAIN SETUP
+START ROS SETUP
+ROSLib uses utf8 encoding by default. It would be more efficient to use ascii (if possible).
+DONE ROS SETUP
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+successfully connected!
+Document data: { x: 0.2, good: [ 'A', 'K' ], y: 0 }
+message:  1726721843781;0.2;0
+done start publish!
+Received message on /taskReport: 
+0;2
+Transaction failed: ProviderError: execution reverted: 2: This task has passed this stage!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async HardhatEthersProvider.estimateGas (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/@nomicfoundation/hardhat-ethers/src/internal/hardhat-ethers-provider.ts:246:27)
+    at async /home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:235:35
+    at async Promise.all (index 0)
+    at async HardhatEthersSigner._sendUncheckedTransaction (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:256:7)
+    at async HardhatEthersSigner.sendTransaction (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/@nomicfoundation/hardhat-ethers/src/signers.ts:125:18)
+    at async send (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:313:20)
+    at async Proxy.updateTaskStatus (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:352:16)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:261:20)
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { x: 0.2, y: 0, good: [ 'A', 'K' ] }
+message:  1726721846223;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { x: 0.2, good: [ 'A', 'K' ], y: 0 }
+message:  1726721847346;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { y: 0, x: 0.2, good: [ 'A', 'K' ] }
+message:  1726721848425;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { good: [ 'A', 'K' ], y: 0, x: 0.2 }
+message:  1726721849502;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { x: 0.2, y: 0, good: [ 'A', 'K' ] }
+message:  1726721850581;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { good: [ 'A', 'K' ], x: 0.2, y: 0 }
+message:  1726721851658;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { y: 0, x: 0.2, good: [ 'A', 'K' ] }
+message:  1726721852735;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { good: [ 'A', 'K' ], y: 0, x: 0.2 }
+message:  1726721853812;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { good: [ 'A', 'K' ], x: 0.2, y: 0 }
+message:  1726721854888;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { good: [ 'A', 'K' ], y: 0, x: 0.2 }
+message:  1726721855965;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { x: 0.2, y: 0, good: [ 'A', 'K' ] }
+message:  1726721857086;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { y: 0, x: 0.2, good: [ 'A', 'K' ] }
+message:  1726721858164;0.2;0
+done start publish!
+get task result Result(10) [
+  2n,
+  'A',
+  'D1',
+  'D2',
+  0n,
+  0n,
+  2n,
+  1726721548n,
+  1726721661n,
+  0n
+]
+Document data: { x: 0.2, good: [ 'A', 'K' ], y: 0 }
+message:  1726721859240;0.2;0
+done start publish!
+Received message on /taskReport: 
+1;2
+Document data: { y: 1.5, x: 1, good: [ 'X', 'B' ] }
+Document data: { good: [ 'A', 'K' ], x: 0.2, y: 0 }
+Document data: { good: [ 'A', 'K' ], y: 0, x: 0.2 }
+Free Bots IDs: Result(0) []
+Unassigned Tasks IDs: Result(2) [ 3n, 4n ]
+done delivery publish!
+Receiving Good was successful
+Received message on /taskReport: 
+2;2
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+Received message on /taskReport: 
+3;2
+Document data: { x: 1, good: [ 'X', 'B' ], y: 1.5 }
+Document data: { x: 1, good: [ 'X', 'B' ], y: 1.5 }
+Free Bots IDs: Result(1) [ 0n ]
+Unassigned Tasks IDs: Result(2) [ 3n, 4n ]
+Transaction was successful
+Document data: { y: 1.5, good: [ 'X', 'B', 'A' ], x: 1 }
+done delivery publish!
+Received message on /taskReport: 
+100;-1
+report not for the current task
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { good: [ 'C', 'SI' ], x: 1, y: -2 }
+message:  1726721939251;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { good: [ 'C', 'SI' ], x: 1, y: -2 }
+message:  1726721940328;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { good: [ 'C', 'SI' ], y: -2, x: 1 }
+message:  1726721941403;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { good: [ 'C', 'SI' ], y: -2, x: 1 }
+message:  1726721942478;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { good: [ 'C', 'SI' ], y: -2, x: 1 }
+message:  1726721943555;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { x: 1, good: [ 'C', 'SI' ], y: -2 }
+message:  1726721944634;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { good: [ 'C', 'SI' ], y: -2, x: 1 }
+message:  1726721945710;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { x: 1, y: -2, good: [ 'C', 'SI' ] }
+message:  1726721946786;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { y: -2, good: [ 'C', 'SI' ], x: 1 }
+message:  1726721947865;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { x: 1, y: -2, good: [ 'C', 'SI' ] }
+message:  1726721948940;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { good: [ 'C', 'SI' ], y: -2, x: 1 }
+message:  1726721950019;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { x: 1, good: [ 'C', 'SI' ], y: -2 }
+message:  1726721951090;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { y: -2, good: [ 'C', 'SI' ], x: 1 }
+message:  1726721952169;1;-2
+done start publish!
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { x: 1, y: -2, good: [ 'C', 'SI' ] }
+message:  1726721953243;1;-2
+done start publish!
+Received message on /taskReport: 
+101;-1
+report not for the current task
+get task result Result(10) [ 3n, 'C', 'G1', 'G2', 0n, 0n, 1n, 1726721591n, 0n, 0n ]
+Document data: { y: -2, x: 1, good: [ 'C', 'SI' ] }
+message:  1726721954319;1;-2
+done start publish!
+Received message on /taskReport: 
+0;3
+Unassigned Tasks IDs: Result(1) [ 4n ]
+Free Bots IDs: Result(0) []
+Receiving Task was successful
+Received message on /taskReport: 
+1;3
+Document data: { good: [ 'I', 'D' ], y: -0.5, x: 2 }
+Document data: { x: 1, good: [ 'C', 'SI' ], y: -2 }
+Document data: { x: 1, good: [ 'C', 'SI' ], y: -2 }
+Free Bots IDs: Result(0) []
+Unassigned Tasks IDs: Result(1) [ 4n ]
+done delivery publish!
+Receiving Good was successful
+Received message on /taskReport: 
+2;3
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+Received message on /taskReport: 
+3;3
+Document data: { x: 2, y: -0.5, good: [ 'I', 'D' ] }
+Document data: { y: -0.5, x: 2, good: [ 'I', 'D' ] }
+Unassigned Tasks IDs: Result(1) [ 4n ]
+Free Bots IDs: Result(1) [ 0n ]
+Transaction was successful
+Document data: { y: -0.5, good: [ 'I', 'D', 'C' ], x: 2 }
+done delivery publish!
+Received message on /taskReport: 
+100;-1
+report not for the current task
+get task result Result(10) [ 4n, 'SI', 'G1', 'D1', 0n, 0n, 1n, 1726721636n, 0n, 0n ]
+Document data: { good: [ 'SI' ], y: -2, x: 1 }
+message:  1726722047349;1;-2
+done start publish!
+get task result Result(10) [ 4n, 'SI', 'G1', 'D1', 0n, 0n, 1n, 1726721636n, 0n, 0n ]
+Document data: { y: -2, x: 1, good: [ 'SI' ] }
+message:  1726722048423;1;-2
+done start publish!
+get task result Result(10) [ 4n, 'SI', 'G1', 'D1', 0n, 0n, 1n, 1726721636n, 0n, 0n ]
+Document data: { good: [ 'SI' ], y: -2, x: 1 }
+message:  1726722049499;1;-2
+done start publish!
+get task result Result(10) [ 4n, 'SI', 'G1', 'D1', 0n, 0n, 1n, 1726721636n, 0n, 0n ]
+Document data: { y: -2, x: 1, good: [ 'SI' ] }
+message:  1726722050581;1;-2
+done start publish!
+get task result Result(10) [ 4n, 'SI', 'G1', 'D1', 0n, 0n, 1n, 1726721636n, 0n, 0n ]
+Document data: { x: 1, good: [ 'SI' ], y: -2 }
+message:  1726722051659;1;-2
+done start publish!
+get task result Result(10) [ 4n, 'SI', 'G1', 'D1', 0n, 0n, 1n, 1726721636n, 0n, 0n ]
+Document data: { good: [ 'SI' ], y: -2, x: 1 }
+message:  1726722052769;1;-2
+done start publish!
+get task result Result(10) [ 4n, 'SI', 'G1', 'D1', 0n, 0n, 1n, 1726721636n, 0n, 0n ]
+Document data: { good: [ 'SI' ], x: 1, y: -2 }
+message:  1726722053847;1;-2
+done start publish!
+get task result Result(10) [ 4n, 'SI', 'G1', 'D1', 0n, 0n, 1n, 1726721636n, 0n, 0n ]
+Document data: { y: -2, good: [ 'SI' ], x: 1 }
+message:  1726722054925;1;-2
+done start publish!
+get task result Result(10) [ 4n, 'SI', 'G1', 'D1', 0n, 0n, 1n, 1726721636n, 0n, 0n ]
+Document data: { y: -2, x: 1, good: [ 'SI' ] }
+message:  1726722056000;1;-2
+done start publish!
+Received message on /taskReport: 
+101;-1
+report not for the current task
+get task result Result(10) [ 4n, 'SI', 'G1', 'D1', 0n, 0n, 1n, 1726721636n, 0n, 0n ]
+Document data: { x: 1, y: -2, good: [ 'SI' ] }
+message:  1726722057081;1;-2
+done start publish!
+Received message on /taskReport: 
+0;4
+Free Bots IDs: Result(0) []
+Unassigned Tasks IDs: Result(0) []
+Receiving Task was successful
+Received message on /taskReport: 
+1;4
+Document data: { good: [ 'K' ], x: 0.2, y: 0 }
+Document data: { y: -2, x: 1, good: [ 'SI' ] }
+Document data: { good: [ 'SI' ], x: 1, y: -2 }
+Free Bots IDs: Result(0) []
+Unassigned Tasks IDs: Result(0) []
+done delivery publish!
+Receiving Good was successful
+Received message on /taskReport: 
+2;4
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+Received message on /taskReport: 
+3;4
+Document data: { y: 0, good: [ 'K' ], x: 0.2 }
+Document data: { good: [ 'K' ], y: 0, x: 0.2 }
+Free Bots IDs: Result(1) [ 0n ]
+Unassigned Tasks IDs: Result(0) []
+Transaction was successful
+Document data: { y: 0, x: 0.2, good: [ 'K', 'SI' ] }
+done delivery publish!
+Received message on /taskReport: 
+100;-1
+report not for the current task
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+Received message on /taskReport: 
+101;-1
+no current task to receive report!
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+^C
+
+
+
+Stored tasks is: Result(5) [
+  Result(10) [
+    0n,          'K',
+    'D1',        'G1',
+    1n,          0n,
+    5n,          1726724244n,
+    1726725385n, 1726725443n
+  ],
+  Result(10) [
+    1n,
+    'X',
+    'D2',
+    'D1',
+    2n,
+    0n,
+    425n,
+    1726724261n,
+    1726725383n,
+    0n
+  ],
+  Result(10) [
+    2n,          'C',
+    'G1',        'D2',
+    0n,          0n,
+    5n,          1726724289n,
+    1726725312n, 1726725439n
+  ],
+  Result(10) [
+    3n,
+    'I',
+    'G2',
+    'D1',
+    0n,
+    0n,
+    435n,
+    1726724337n,
+    1726725469n,
+    0n
+  ],
+  Result(10) [
+    4n,
+    'I',
+    'G2',
+    'D2',
+    2n,
+    0n,
+    425n,
+    1726724347n,
+    1726725448n,
+    0n
+  ]
+]
+
+/////////////////////
+/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+^C
+chuong@chuong-Latitude-5491:~/thesisblockchainrobots/blockchain/eth_client/scripts/clients$ npx hardhat run neoClient_0.ts --network localnet
+START FIREBASE SETUP
+DONE BLOCKCHAIN SETUP
+START BLOCKCHAIN SETUP
+DONE BLOCKCHAIN SETUP
+START ROS SETUP
+ROSLib uses utf8 encoding by default. It would be more efficient to use ascii (if possible).
+DONE ROS SETUP
+successfully connected!
+get task result Result(10) [ 8n, 'A', 'G2', 'D2', 0n, 0n, 1n, 1726729588n, 0n, 0n ]
+Document data: { x: 2, y: -0.5, good: [ 'A' ] }
+message:  1726729613106;2;-0.5
+done start publish!
+Received message on /taskReport: 
+0;8
+Receiving Task was successful
+Free Bots IDs: Result(0) []
+Free Bots IDs: Result(0) []
+Free Bots IDs: Result(0) []
+Unassigned Tasks IDs: Result(0) []
+Unassigned Tasks IDs: Result(0) []
+Unassigned Tasks IDs: Result(0) []
+Free Bots IDs: Result(0) []
+Free Bots IDs: Result(0) []
+Unassigned Tasks IDs: Result(0) []
+Unassigned Tasks IDs: Result(0) []
+Received message on /taskReport: 
+1;8
+Document data: { good: [ 'K' ], x: 1, y: 1.5 }
+Document data: { y: -0.5, good: [ 'A' ], x: 2 }
+Document data: { good: [ 'A' ], y: -0.5, x: 2 }
+Free Bots IDs: Result(0) []
+Unassigned Tasks IDs: Result(0) []
+done delivery publish!
+Receiving Good was successful
+Received message on /taskReport: 
+2;8
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+recieved delivery goal
+Received message on /taskReport: 
+3;8
+Document data: { y: 1.5, x: 1, good: [ 'K' ] }
+Document data: { y: 1.5, x: 1, good: [ 'K' ] }
+Free Bots IDs: Result(1) [ 1n ]
+Free Bots IDs: Result(2) [ 1n, 2n ]
+Free Bots IDs: Result(3) [ 1n, 2n, 0n ]
+Unassigned Tasks IDs: Result(0) []
+Unassigned Tasks IDs: Result(0) []
+Unassigned Tasks IDs: Result(0) []
+Transaction was successful
+Document data: { good: [ 'K', 'A' ], y: 1.5, x: 1 }
+done delivery publish!
+Received message on /taskReport: 
+100;-1
+report not for the current task
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+Received message on /taskReport: 
+101;-1
+no current task to receive report!
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+ProviderError: execution reverted: 0:The robot is free!
+    at HttpProvider.request (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/hardhat/src/internal/core/providers/http.ts:96:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async staticCallResult (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:337:22)
+    at async staticCall (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:303:24)
+    at async Proxy.getOwnTask (/home/chuong/thesisblockchainrobots/blockchain/eth_client/node_modules/ethers/src.ts/contract/contract.ts:351:41)
+    at async main (/home/chuong/thesisblockchainrobots/blockchain/eth_client/scripts/clients/neoClient_0.ts:221:23)
+execution reverted: 0:The robot is free!
+check code 0
+^C
+
+/////////////////////

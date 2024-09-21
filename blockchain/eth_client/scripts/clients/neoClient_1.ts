@@ -15,9 +15,14 @@ const { initializeApp } = require("firebase/app");
 const { getFirestore } = require("firebase/firestore");
 const { contractAddress } = require("../contractAddress");
 
-// const contractAddress = "0x422A3492e218383753D8006C7Bfa97815B44373F"; // Replace with your deployed contract address
+interface IReport {
+  stage: number;
+  taskId: number;
+}
+
 const nodeNumber = 1;
 
+let reportBuffer: IReport[] = [];
 let stageNumber: number = 0;
 let taskValue: any = null;
 
@@ -89,18 +94,40 @@ const blockchainNodeSetup = async () => {
   let taskReport = new ROSLIB.Topic({
     ros: ros,
     name: `/taskReport`,
-    messageType: "std_msgs/Int16",
+    messageType: "std_msgs/String",
   });
+
+  // taskReport.subscribe((message: any) => {
+  //   console.log("Received message on " + taskReport.name + ": ");
+  //   console.log(message.data);
+  //   const data = message.data.split(";");
+
+  //   if (!taskValue) {
+  //     console.log("no current task to receive report!");
+  //     return;
+  //   }
+  //   if (Number(data[1]) != Number(taskValue[0])) {
+  //     console.log("report not for the current task");
+  //     return;
+  //   }
+
+  //   if (Number(data[0]) >= 0) {
+  //     stageNumber = Number(data[0]) + 1;
+  //   } else {
+  //     stageNumber = Number(data[0]);
+  //   }
+  // });
 
   taskReport.subscribe((message: any) => {
     console.log("Received message on " + taskReport.name + ": ");
     console.log(message.data);
-    const data = message.data;
-    if (data >= 0) {
-      stageNumber = data + 1;
-    } else {
-      stageNumber = data;
-    }
+    const data = message.data.split(";");
+
+    let newReport: IReport = {
+      stage: Number(data[0]),
+      taskId: Number(data[1]),
+    };
+    reportBuffer.push(newReport);
   });
 
   console.log("DONE ROS SETUP");
@@ -160,6 +187,32 @@ async function main() {
 
   while (true) {
     try {
+      //read report buffer
+      if (reportBuffer.length > 0) {
+        let currentReport = reportBuffer.shift();
+
+        if (!currentReport) {
+          throw "shift error!";
+        }
+
+        if (!taskValue) {
+          console.log("no current task to receive report!");
+          continue;
+        }
+        if (currentReport.taskId != Number(taskValue[0])) {
+          console.log("report not for the current task");
+          continue;
+        }
+
+        if (currentReport.stage >= 0) {
+          stageNumber = currentReport.stage + 1;
+        } else {
+          //error code
+          stageNumber = currentReport.stage;
+        }
+      }
+
+      //getting task and spam the navigator
       if (stageNumber == 0) {
         //get task
 
@@ -189,16 +242,24 @@ async function main() {
           `${timeStamp};${goodPosition.x};${goodPosition.y}`
         );
         let message = new ROSLIB.Message({
-          data: `${timeStamp};${goodPosition.x};${goodPosition.y};${stageNumber}`,
+          data: `${timeStamp};${goodPosition.x};${goodPosition.y};${stageNumber};${taskValue[0]}`,
         });
         taskAssign.publish(message);
         console.log("done start publish!");
+        // //test
+        // let messageTest = new ROSLIB.Message({
+        //   data: `${-1}`,
+        // });
+        // await delay(1000);
+        // taskAssign.publish(messageTest);
+        // //test
       }
 
+      //receive navigator's confirmation
       if (stageNumber == 1) {
         try {
           let tx = await taskManagerRunner.updateTaskStatus(
-            taskValue[0],
+            Number(taskValue[0]),
             2,
             Math.round(Date.now() / 1000)
           );
@@ -212,6 +273,7 @@ async function main() {
         }
       }
 
+      //reach the pick up location, send out navigation
       if (stageNumber == 2) {
         try {
           const timeStamp = Date.now();
@@ -222,20 +284,27 @@ async function main() {
           await checkAndTakeGood(taskValue[2], taskValue[1]); //goodPosition and goodID
 
           let tx = await taskManagerRunner.updateTaskStatus(
-            taskValue[0],
+            Number(taskValue[0]),
             3,
             Math.round(Date.now() / 1000)
           );
           await tx.wait();
 
-          let txValidate = await taskManagerRunner.reportGoods(
-            goodPosition.good,
-            taskValue[2]
-          );
-          await txValidate.wait();
+          try {
+            let txValidate = await taskManagerRunner.reportGoods(
+              goodPosition.good,
+              taskValue[2]
+            );
+            await txValidate.wait();
+          } catch (error) {
+            console.log(
+              "reporting good is not running, the system still continue",
+              error
+            );
+          }
 
           let message = new ROSLIB.Message({
-            data: `${timeStamp};${deliveryPosition.x};${deliveryPosition.y};${stageNumber}`,
+            data: `${timeStamp};${deliveryPosition.x};${deliveryPosition.y};${stageNumber};${taskValue[0]}`,
           });
           taskAssign.publish(message);
           console.log("done delivery publish!");
@@ -255,14 +324,19 @@ async function main() {
         }
       }
 
+      //recevie navigator's confirmation
       if (stageNumber == 3) {
         console.log("recieved delivery goal");
       }
+
+      //done delivery
       if (stageNumber == 4) {
         try {
           const deliverPosition = await getDocument(taskValue[3]);
 
           await checkAndGiveGood(taskValue[3], taskValue[1]);
+
+          console.log(taskValue[0], 5, Math.round(Date.now() / 1000));
 
           let tx = await taskManagerRunner.updateTaskStatus(
             taskValue[0],
@@ -271,11 +345,18 @@ async function main() {
           );
           await tx.wait();
 
-          let txValidate = await taskManagerRunner.reportGoods(
-            deliverPosition.good,
-            taskValue[3]
-          );
-          await txValidate.wait();
+          try {
+            let txValidate = await taskManagerRunner.reportGoods(
+              deliverPosition.good,
+              taskValue[3]
+            );
+            await txValidate.wait();
+          } catch (error) {
+            console.log(
+              "reporting good is not running, the system still continue",
+              error
+            );
+          }
 
           console.log("Transaction was successful");
           stageNumber = 0;
@@ -284,14 +365,14 @@ async function main() {
 
           const deliveryPosition = await getDocument(taskValue[3]);
           let message = new ROSLIB.Message({
-            data: `${timeStamp};${deliveryPosition.x - 0.5};${
+            data: `${timeStamp};${deliveryPosition.x + 0.5};${
               deliveryPosition.y + 0.5
-            };${100}`,
+            };${100};${-1}`,
           }); // get away from the delivery spot
           taskAssign.publish(message);
           console.log("done delivery publish!");
         } catch (error) {
-          console.log("Transaction failed:", error);
+          console.log("Delivery failed:", error);
           let tx = await taskManagerRunner.updateTaskStatus(
             taskValue[0],
             403,
@@ -302,28 +383,35 @@ async function main() {
         }
       }
 
+      //navigator error
       if (stageNumber == -2) {
         console.log("Task Error in Navigator");
         let tx = await taskManagerRunner.updateTaskStatus(
-          taskValue[0],
+          Number(taskValue[0]),
           402,
           Math.round(Date.now() / 1000)
         );
         await tx.wait();
         stageNumber = 0;
       }
+
+      //timeout error
       if (stageNumber == -3) {
         let tx = await taskManagerRunner.updateTaskStatus(
-          taskValue[0],
+          Number(taskValue[0]),
           405,
           Math.round(Date.now() / 1000)
         );
         await tx.wait();
         stageNumber = 0;
       }
-      if (stageNumber == 102) {
+
+      //done hiding
+      if (stageNumber > 100) {
         stageNumber = 0;
       }
+
+      //client error and interrupt navigator
     } catch (error) {
       console.log("global error:", error);
       let message = new ROSLIB.Message({
@@ -335,7 +423,7 @@ async function main() {
       console.log("client error!");
       try {
         let tx = await taskManagerRunner.updateTaskStatus(
-          taskValue[0],
+          Number(taskValue[0]),
           400,
           Math.round(Date.now() / 1000)
         );

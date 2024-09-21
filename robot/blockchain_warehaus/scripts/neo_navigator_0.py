@@ -5,7 +5,6 @@ import actionlib
 import time
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from std_msgs.msg import String
-from std_msgs.msg import Int16;
 import threading
 from actionlib_msgs.msg import GoalID
 
@@ -18,16 +17,6 @@ def active_cb(extra='default'):
 def feedback_cb(feedback):
     rospy.loginfo("Current location: ")
     # +str(feedback))
-
-# def done_cb(status, result):
-#     if status == 3:
-#         rospy.loginfo("Goal reached")
-#     if status == 2 or status == 8:
-#         rospy.loginfo("Goal cancelled")
-#     if status == 4:
-#         rospy.loginfo("Goal aborted")
-    
-
 
 def navigate(position, orientation, done_cb):
     # navclient = actionlib.SimpleActionClient('move_base',MoveBaseAction)
@@ -51,7 +40,7 @@ def navigate(position, orientation, done_cb):
     # finished = navclient.wait_for_result(rospy.Duration(secs=60))
 
     start_time = rospy.Time.now()
-    timeout = rospy.Duration(secs=60)  # 60 seconds timeout
+    timeout = rospy.Duration(secs=180)  # 60 seconds timeout
 
     while not rospy.is_shutdown():
         # Check if interrupted
@@ -71,6 +60,7 @@ def navigate(position, orientation, done_cb):
             return True
         elif state > 3:
             rospy.logerr(state)
+            return False
 
         # Check for timeout
         if rospy.Time.now() - start_time > timeout:
@@ -193,9 +183,8 @@ def doTaskCallback(data):
 
 
 pub = rospy.Publisher('taskReport', String, queue_size=10)
-navclient = actionlib.SimpleActionClient('/tb3_2/move_base',MoveBaseAction)
-cancel_pub = rospy.Publisher("tb3_2/move_base/cancel", GoalID, queue_size=1)
-cancel_msg = GoalID()
+# navclient = actionlib.SimpleActionClient('/tb3_2/move_base',MoveBaseAction)
+navclient = actionlib.SimpleActionClient('move_base',MoveBaseAction)
 isInterrupted = False
 t1 = None
 

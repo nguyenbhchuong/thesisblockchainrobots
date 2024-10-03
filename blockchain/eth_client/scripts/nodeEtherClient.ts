@@ -1,3 +1,5 @@
+//this is the old version of blockchain client.
+
 import {
   BaseContract,
   Contract,

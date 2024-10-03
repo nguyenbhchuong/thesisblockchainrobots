@@ -1,3 +1,5 @@
+//this program is for TESTING connection with off-chain database
+
 const { doc, getDoc } = require("firebase/firestore");
 const { initializeApp } = require("firebase/app");
 const { getFirestore } = require("firebase/firestore");

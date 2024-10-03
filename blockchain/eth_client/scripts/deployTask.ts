@@ -1,3 +1,5 @@
+//This is the program used in settup to Deploy a smart contract
+
 import { Contract, ContractFactory } from "ethers";
 import { ethers } from "hardhat";
 

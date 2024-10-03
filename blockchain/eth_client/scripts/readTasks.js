@@ -1,3 +1,5 @@
+//this program is used for reading tasks and robots for debugging
+
 const { ethers } = require("hardhat");
 const { contractAddress } = require("./contractAddress");
 

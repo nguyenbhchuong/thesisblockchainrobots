@@ -1,0 +1,20 @@
+.normalText {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.titleText {
+  font-weight: 600;
+}
+
+.bigText {
+  font-size: 18px;
+}
+
+.button {
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+  user-select: none;
+}

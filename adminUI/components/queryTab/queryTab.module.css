@@ -1,0 +1,30 @@
+.queryTab {
+  top: 35px;
+  right: -220px;
+  /* width: 250px; */
+  /* max-height: 400px;
+  overflow-y: scroll; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  z-index: 1;
+  border: 1px solid #000;
+  padding: 10px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.queryRow {
+  align-items: center;
+  display: flex;
+  width: 400px;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.button {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}

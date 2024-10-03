@@ -1,3 +1,5 @@
+//this program is for TESTING update status with blockchain
+
 import { BaseContract, ContractFactory, Signer } from "ethers";
 const { contractAddress } = require("./contractAddress");
 

@@ -1,6 +1,6 @@
 # Supporting Goods Movement In Warehouses Using Decentralized Swarm Robotics
 
-file structure:
+File structure:
 - blockchain: code, command, environment to develop, deploy a private network with smart contract
 - robot:
 	- blockchain warehouse: the navigator code

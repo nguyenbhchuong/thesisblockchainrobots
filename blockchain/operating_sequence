@@ -14,6 +14,7 @@
 
 10 terminal setup for physical robot:
 
+Set up physical robot
 1. roscore
 2. bring up robot (pi)
 3. turtlebot navigation 
@@ -25,7 +26,7 @@
 9. smart contract deploy and monitor
 10. blockchain client
 
-Problems:
+Problems notes:
 
 1. 2.4 the message sending start before the node connect to rosbridge
 1. /taskAssign topic could be spammed, can use timestamp to prevent it (v)

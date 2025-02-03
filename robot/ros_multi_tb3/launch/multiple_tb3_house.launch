@@ -1,3 +1,4 @@
+<!--This file is for Gazebo Simulation -->
 <launch>
   <arg name="model" default="waffle_pi" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="move_forward_only" default="false"/>

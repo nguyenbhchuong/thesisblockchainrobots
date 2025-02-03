@@ -1,7 +1,0 @@
-const Counter = await ethers.getContractFactory("ChipToken");
-clear
-const Counter = await ethers.getContractFactory("ChipToken");
-const Counter = await ethers.getContractFactory("Counter");
-const accountss = await hre.ethers.getSigners()
-const accounts = await hre.ethers.getSigners()
-const accounts = await ethers.getSigners()

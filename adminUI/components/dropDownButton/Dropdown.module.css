@@ -1,0 +1,43 @@
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdownButton {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+  max-width: 150px;
+  user-select: none;
+  text-wrap: nowrap;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 40px;
+  display: flex;
+  max-height: 40vh;
+  overflow-y: scroll;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  gap: 5px;
+  padding: 5px 5px;
+  z-index: 1;
+}
+
+.dropdownMenuHide {
+  position: absolute;
+  display: none;
+}
+
+.dropdownItem {
+  padding: 5px 20px;
+  cursor: pointer;
+  text-wrap: nowrap;
+  user-select: none;
+}

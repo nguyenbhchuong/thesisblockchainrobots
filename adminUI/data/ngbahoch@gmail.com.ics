@@ -1,0 +1,396 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:ngbahoch@gmail.com
+X-WR-TIMEZONE:Asia/Ho_Chi_Minh
+BEGIN:VTIMEZONE
+TZID:Antarctica/Davis
+X-LIC-LOCATION:Antarctica/Davis
+BEGIN:STANDARD
+TZOFFSETFROM:+0700
+TZOFFSETTO:+0700
+TZNAME:+07
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART:20220718T074500Z
+DTEND:20220718T084500Z
+DTSTAMP:20230826T132822Z
+ORGANIZER;CN=unknownorganizer@calendar.google.com:mailto:unknownorganizer@c
+ alendar.google.com
+UID:7kukuqrfedlm2f9tmgta2fq3sie4ju451ocp9f4qsm041biubg1cp1m5j70sdd0i5p4g
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Bao Ho
+ ang Chuong Nguyen;X-NUM-GUESTS=0:mailto:ngbahoch@gmail.com
+CLASS:PRIVATE
+CREATED:20220714T123145Z
+DESCRIPTION:Appointment at Visa Application Centre\nRESCO BUILDING 3 rd Flo
+ or\, 94-96 Nguyen Du Street\, Ben Nghe Ward\, District \n1\, Hochiminh\, HO
+  CHI MINH\, Vietnam\, 70000\n\nConfirmation number: GER7258534134
+LAST-MODIFIED:20220714T123145Z
+LOCATION:RESCO BUILDING 3 rd Floor\, 94-96 Nguyen Du Street\, Ben Nghe Ward
+ \, District \n1\, Hochiminh\, HO CHI MINH\, Vietnam\, 70000
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Appointment at Visa Application Centre
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20220905T165500Z
+DTEND:20220906T000000Z
+DTSTAMP:20230826T132822Z
+ORGANIZER;CN=unknownorganizer@calendar.google.com:mailto:unknownorganizer@c
+ alendar.google.com
+UID:7kukuqrfedlm2f9tq9mibcfm2qi3hgktvs6rfobbv72nqgg06ggv9acbqi21eln50apg
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Bao Ho
+ ang Chuong Nguyen;X-NUM-GUESTS=0:mailto:ngbahoch@gmail.com
+CLASS:PRIVATE
+CREATED:20220701T174943Z
+DESCRIPTION:Emirates flight 393\nHo Chi Minh City SGN 23:55 (local time) - 
+ Dubai DXB 04:00 (local time)\n\nConfirmation number: PS63WF
+LAST-MODIFIED:20220903T170107Z
+LOCATION:Ho Chi Minh City SGN
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Flight to Dubai (EK 393)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20220906T042500Z
+DTEND:20220906T111500Z
+DTSTAMP:20230826T132822Z
+ORGANIZER;CN=unknownorganizer@calendar.google.com:mailto:unknownorganizer@c
+ alendar.google.com
+UID:7kukuqrfedlm2f9t9ouh5mk582e6mainkl1qo6nfb0hq8ttkq8upcidsjf3o2ksbsjug
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Bao Ho
+ ang Chuong Nguyen;X-NUM-GUESTS=0:mailto:ngbahoch@gmail.com
+CLASS:PRIVATE
+CREATED:20220701T174943Z
+DESCRIPTION:Emirates flight 45\nDubai DXB 08:25 (local time) - Frankfurt FR
+ A 13:15 (local time)\n\nConfirmation number: PS63WF
+LAST-MODIFIED:20220904T042802Z
+LOCATION:Dubai DXB
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Flight to Frankfurt (EK 45)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230228T104000Z
+DTEND:20230228T225000Z
+DTSTAMP:20230826T132822Z
+ORGANIZER;CN=unknownorganizer@calendar.google.com:mailto:unknownorganizer@c
+ alendar.google.com
+UID:7kukuqrfedlm2f9t9lbakj06l9s0htaas7codpvrppm4gobmmgl1djd4qn24sc1kssj0
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Bao Ho
+ ang Chuong Nguyen;X-NUM-GUESTS=0:mailto:ngbahoch@gmail.com
+CLASS:PRIVATE
+CREATED:20221105T163042Z
+DESCRIPTION:Singapore Airlines flight 25\nFrankfurt FRA 11:40 (local time) 
+ - Singapore SIN 06:50 (local time)\n\nConfirmation number: 6PZRIJ
+LAST-MODIFIED:20230227T222405Z
+LOCATION:Frankfurt FRA
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Flight to Singapore (SQ 25)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230301T093000Z
+DTEND:20230301T114000Z
+DTSTAMP:20230826T132822Z
+ORGANIZER;CN=unknownorganizer@calendar.google.com:mailto:unknownorganizer@c
+ alendar.google.com
+UID:7kukuqrfedlm2f9tvt3hrti54a6bkbjcbqunv2bv27n19o3dg5kg9jgd5pnp9ie5v14g
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Bao Ho
+ ang Chuong Nguyen;X-NUM-GUESTS=0:mailto:ngbahoch@gmail.com
+CLASS:PRIVATE
+CREATED:20221105T163042Z
+DESCRIPTION:Singapore Airlines flight 186\nSingapore SIN 17:30 (local time)
+  - Ho Chi Minh City SGN 18:40 (local time)\n\nConfirmation number: 6PZRIJ
+LAST-MODIFIED:20230228T110135Z
+LOCATION:Singapore SIN
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Flight to Ho Chi Minh City (SQ 186)
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230512T083000Z
+DTEND:20230512T090000Z
+DTSTAMP:20230826T132822Z
+ORGANIZER;CN=nguyen.duongngocthuy@se.com:mailto:nguyen.duongngocthuy@se.com
+UID:040000008200E00074C5B7101A82E008000000005057C3915483D901000000000000000
+ 0100000002A21E97AF8530C43B1777D17C0E9B5EA
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=Gi
+ ang NGUYEN NGOC HUONG;X-NUM-GUESTS=0:mailto:giang.nguyenngochuong@se.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Bao Ho
+ ang Chuong Nguyen;X-NUM-GUESTS=0:mailto:ngbahoch@gmail.com
+CREATED:20230510T083413Z
+DESCRIPTION:Dear Chuong\,\n\nHope you are doing great 😊\n\nCongratulations
+  for making it to the third step of the application process: HR Interview!\
+ n\n[A picture containing text\, diagram\, screenshot\, font  Description au
+ tomatically generated]\n\nThe interview will be conducted online via MS Tea
+ ms platform. We are delighted to confirm your interview session with the fo
+ llowing information:\n\nDate\n: May 12\, 2023\n\nTime\n: 15:30 AM (Vietnam 
+ Time)\n\nPosition\n: Schneider Graduate Programme – Industrial Automation &
+  Software (ID: 008E0I)\n\nNote\n: This is a video call interview. Please us
+ e a laptop/desktop/mobile phone equipped with camera feature. Please join 1
+ 0 minutes before the interview to avoid technical error.\n\nFor first time 
+ user\, please refer on the attached MS Teams guidelines.\n\nPlease acknowle
+ dge the receipt of this confirmation e-mail and let us know if you have que
+ stions on the role.\n\nAdditionally\, you may refer to the following corpor
+ ate documents to learn more about Schneider Electric as a Company:\n\n\n   
+   *   About Schneider Electric<https://www.se.com/ww/en/about-us/careers/jo
+ b-details/digital-customer-experience-lead/007U91/>\n     *   Why Schneider
+  Electric?<https://www.se.com/ww/en/about-us/careers/job-details/digital-cu
+ stomer-experience-lead/007U91/>\n     *   Our company story video <https://
+ www.youtube.com/watch?v=4EtpkB0cuXE&t=2s>\n\nIf you have concerns or there 
+ is a need to reschedule this interview\, please make sure that you select t
+ he “Reply All” option on your screen.\n\nIn case you need further support f
+ rom us\, please contact our team: Ms. Duong (nguyen.duongngocthuy@se.com<ma
+ ilto:nguyen.duongngocthuy@se.com> / 090 699 1303) or Ms. Giang (giang.nguye
+ nngochuong@se.com<mailto:giang.nguyenngochuong@se.com> / 093 314 0895).\n\n
+ Thank you and we wish you all the best for your interview.\n_______________
+ _________________________________________________________________\nMicrosof
+ t Teams meeting\nJoin on your computer\, mobile app or room device\nClick h
+ ere to join the meeting<https://teams.microsoft.com/l/meetup-join/19%3ameet
+ ing_ZTMwMDM5YzQtZjA1Zi00YzRiLTgyNDYtYzRjZTUzNWNkYjhl%40thread.v2/0?context=
+ %7b%22Tid%22%3a%226e51e1ad-c54b-4b39-b598-0ffe9ae68fef%22%2c%22Oid%22%3a%22
+ 9d8749ff-6ad3-48c3-8503-4818382e5df9%22%7d>\nMeeting ID: 321 480 510 379\nP
+ asscode: 6BuWQ5\nDownload Teams<https://www.microsoft.com/en-us/microsoft-t
+ eams/download-app> | Join on the web<https://www.microsoft.com/microsoft-te
+ ams/join-a-meeting>\nJoin with a video conferencing device\n690912161.{Conf
+ ID}@video.schneider-electric.com<mailto:690912161.%7bConfID%7d@video.schnei
+ der-electric.com>\nVideo Conference ID: 129 500 094 5\nAlternate VTC instru
+ ctions<https://dialin.plcm.vc/teams/?key=690912161&conf=1295000945&domain=v
+ ideo.schneider-electric.com&ip=159.215.247.20>\nOr call in (audio only)\n+8
+ 4 243 2754 377\,\,151511923#<tel:+842432754377\,\,151511923#>   Vietnam\, H
+ a Noi\nPhone Conference ID: 151 511 923#\nFind a local number<https://diali
+ n.teams.microsoft.com/8093d3ba-288f-45c5-9669-24497e3c2114?id=151511923> | 
+ Reset PIN<https://dialin.teams.microsoft.com/usp/pstnconferencing>\n[https:
+ //d17j983achj5tg.cloudfront.net/MailSig.png]\nLearn More<https://aka.ms/Joi
+ nTeamsMeeting> | Meeting options<https://teams.microsoft.com/meetingOptions
+ /?organizerId=9d8749ff-6ad3-48c3-8503-4818382e5df9&tenantId=6e51e1ad-c54b-4
+ b39-b598-0ffe9ae68fef&threadId=19_meeting_ZTMwMDM5YzQtZjA1Zi00YzRiLTgyNDYtY
+ zRjZTUzNWNkYjhl@thread.v2&messageId=0&language=en-US>\n____________________
+ ____________________________________________________________\n\n
+LAST-MODIFIED:20230512T043029Z
+LOCATION:Microsoft Teams Meeting
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Schneider Graduate Program 2023_Invitation to HR Interview: Nguyen 
+ Bao Hoang Chuong
+TRANSP:OPAQUE
+ATTACH;FILENAME=image001.png:https://mail.google.com/?view=att&th=18804cc10
+ 068addf&attid=0.0.1&disp=attd&zw
+ATTACH;FILENAME=MS Teams Interview Guidelines.pdf:https://mail.google.com/?
+ view=att&th=18804cc10068addf&attid=0.1&disp=attd&zw
+X-MICROSOFT-SKYPETEAMSPROPERTIES:{"cid":"19:meeting_ZTMwMDM5YzQtZjA1Zi00YzR
+ iLTgyNDYtYzRjZTUzNWNkYjhl@thread.v2"\,"private":true\,"type":0\,"mid":0\,"r
+ id":0\,"uid":null}
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-OWNERAPPTID:952784871
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-SCHEDULINGSERVICEUPDATEURL:https://api.scheduler.teams.microsof
+ t.com/teams/6e51e1ad-c54b-4b39-b598-0ffe9ae68fef/9d8749ff-6ad3-48c3-8503-48
+ 18382e5df9/19_meeting_ZTMwMDM5YzQtZjA1Zi00YzRiLTgyNDYtYzRjZTUzNWNkYjhl@thre
+ ad.v2/0
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-ONLINEMEETINGCONFLINK:conf:sip:nguyen.duongngocthuy@se.com\;gru
+ u\;opaque=app:conf:focus:id:teams:2:0!19:meeting_ZTMwMDM5YzQtZjA1Zi00YzRiLT
+ gyNDYtYzRjZTUzNWNkYjhl-thread.v2!9d8749ff6ad348c385034818382e5df9!6e51e1adc
+ 54b4b39b5980ffe9ae68fef
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-LOCATIONS:[ { "DisplayName" : "Microsoft Teams Meeting"\, "Loca
+ tionAnnotation" : ""\, "LocationSource" : 0\, "Unresolved" : false\, "Locat
+ ionUri" : "" } ]
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-SKYPETEAMSMEETINGURL:https://teams.microsoft.com/l/meetup-join/
+ 19%3ameeting_ZTMwMDM5YzQtZjA1Zi00YzRiLTgyNDYtYzRjZTUzNWNkYjhl%40thread.v2/0
+ ?context=%7b%22Tid%22%3a%226e51e1ad-c54b-4b39-b598-0ffe9ae68fef%22%2c%22Oid
+ %22%3a%229d8749ff-6ad3-48c3-8503-4818382e5df9%22%7d
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230617T100000Z
+DTEND:20230617T120000Z
+DTSTAMP:20230826T132822Z
+ORGANIZER;CN=linh.ca.210084@student.fulbright.edu.vn:mailto:linh.ca.210084@
+ student.fulbright.edu.vn
+UID:040000008200E00074C5B7101A82E00800000000C92A7DF04F9FD901000000000000000
+ 010000000BD9E763025332C4EAC8B2AE4AEAA5830
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=UG
+ 21 - Truong Tran Nhat Huy;X-NUM-GUESTS=0:mailto:huy.truong.210287@student.f
+ ulbright.edu.vn
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Bao Ho
+ ang Chuong Nguyen;X-NUM-GUESTS=0:mailto:ngbahoch@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=UG
+ 20 - Le Tran Thien Nga;X-NUM-GUESTS=0:mailto:nga.le.200199@student.fulbrigh
+ t.edu.vn
+CREATED:20230615T060927Z
+DESCRIPTION:🌱Ngày: Thứ 7\, 17/6/2023\n\n🌱Giờ: 5PM - 7PM\n\n🌱Địa điểm: Tr
+ ốn để dừng chân\, 41/42 Ngô Quyền\, Phường 6\, Quận 10\n\n🌱Chuẩn bị cái gì
+ :\n\n  *   Laptop để làm việc (+ ổ nối điện 😄)\n\n  *   Đọc Project Propos
+ al để hiểu xíu về project của tụi mình: https://docs.google.com/document/d/
+ 1u55YkIs0CK3uEu5_PgG9aOWiPQ0Ircgs8yAE2vmzaMk/edit?usp=sharing\n\n  *   Tâm 
+ hồn rộng mở để CS và Art collab dui dẻ với nhao\n\n\n🌱Meeting agenda\n\n  
+ *   Giới thiệu và Icebreaking (20’)\n\n  *   Project Overview (10’)\n\n  * 
+   Role Description (15’)\n\n  *   Project Expectations (15’)\n\n  *   Furth
+ er plans & Strategies (30’)\n\n  *   Next steps (10’)\n\nCan't wait to meet
+  you guysss!!!!\n
+LAST-MODIFIED:20230615T062040Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Foodwaste Project - Meeting đầu tiên ohoho
+TRANSP:OPAQUE
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-LOCATIONS:[]
+X-MICROSOFT-CDO-OWNERAPPTID:2121695177
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Antarctica/Davis:20230708T090000
+DTEND;TZID=Antarctica/Davis:20230708T110000
+RRULE:FREQ=WEEKLY;WKST=SU;UNTIL=20230731T020000Z;INTERVAL=1;BYDAY=SA
+DTSTAMP:20230826T132822Z
+ORGANIZER;CN=linh.ca.210084@student.fulbright.edu.vn:mailto:linh.ca.210084@
+ student.fulbright.edu.vn
+UID:040000008200E00074C5B7101A82E00800000000C52F55F8C6ACD901000000000000000
+ 010000000E85F56ADD23BA34BA64E92F726C26603
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=UG
+ 21 - Truong Tran Nhat Huy;X-NUM-GUESTS=0:mailto:huy.truong.210287@student.f
+ ulbright.edu.vn
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Bao Ho
+ ang Chuong Nguyen;X-NUM-GUESTS=0:mailto:ngbahoch@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=UG
+ 20 - Le Tran Thien Nga;X-NUM-GUESTS=0:mailto:nga.le.200199@student.fulbrigh
+ t.edu.vn
+CREATED:20230702T092419Z
+DESCRIPTION:Địa điểm: offline (mỗi tuần một chỗ hả ta?)\nAgenda: update T6 
+ mỗi tuần trên Discord\n\n__________________________________________________
+ ______________________________\ncuộc họp Microsoft Teams\nTham gia trên máy
+  tính\, ứng dụng di động hoặc thiết bị phòng của bạn\nNhấn vào đây để tham 
+ gia cuộc họp<https://teams.microsoft.com/l/meetup-join/19%3ameeting_OWZlZTY
+ 2OTYtY2E2Mi00NDFlLTk4NGUtZWI4MDk4MTJlYmQ5%40thread.v2/0?context=%7b%22Tid%2
+ 2%3a%22ee63425f-af72-4a58-82e7-e451cc92646a%22%2c%22Oid%22%3a%22a043465c-1f
+ 3b-434f-9891-e0ba94c74d8a%22%7d>\nID Cuộc họp: 465 813 038 459\nMật mã: RiN
+ KCz\nTải xuống Teams<https://www.microsoft.com/en-us/microsoft-teams/downlo
+ ad-app> | Tham gia trên web<https://www.microsoft.com/microsoft-teams/join-
+ a-meeting>\nTìm hiểu thêm<https://aka.ms/JoinTeamsMeeting> | Tùy chọn cuộc 
+ họp<https://teams.microsoft.com/meetingOptions/?organizerId=a043465c-1f3b-4
+ 34f-9891-e0ba94c74d8a&tenantId=ee63425f-af72-4a58-82e7-e451cc92646a&threadI
+ d=19_meeting_OWZlZTY2OTYtY2E2Mi00NDFlLTk4NGUtZWI4MDk4MTJlYmQ5@thread.v2&mes
+ sageId=0&language=vi-VN>\n_________________________________________________
+ _______________________________\n
+LAST-MODIFIED:20230705T061527Z
+LOCATION:Cuộc họp trong Microsoft Teams
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Foodwaste project - Weekly Team Meeting
+TRANSP:OPAQUE
+X-MICROSOFT-ONLINEMEETINGINFORMATION:{"OnlineMeetingChannelId":null\,"Onlin
+ eMeetingProvider":3}
+X-MICROSOFT-SKYPETEAMSPROPERTIES:{"cid":"19:meeting_OWZlZTY2OTYtY2E2Mi00NDF
+ lLTk4NGUtZWI4MDk4MTJlYmQ5@thread.v2"\,"rid":0\,"mid":0\,"uid":null\,"privat
+ e":true\,"type":0}
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-OWNERAPPTID:2121733317
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-SCHEDULINGSERVICEUPDATEURL:https://api.scheduler.teams.microsof
+ t.com/teams/ee63425f-af72-4a58-82e7-e451cc92646a/a043465c-1f3b-434f-9891-e0
+ ba94c74d8a/19_meeting_OWZlZTY2OTYtY2E2Mi00NDFlLTk4NGUtZWI4MDk4MTJlYmQ5@thre
+ ad.v2/0
+X-MICROSOFT-LOCATIONDISPLAYNAME:Cuộc họp trong Microsoft Teams
+X-MICROSOFT-CDO-INSTTYPE:1
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-LOCATIONS:[{"DisplayName":"Cuộc họp trong Microsoft Teams"\,"Lo
+ cationAnnotation":""\,"LocationUri":""\,"LocationStreet":""\,"LocationCity"
+ :""\,"LocationState":""\,"LocationCountry":""\,"LocationPostalCode":""\,"Lo
+ cationFullAddress":""}]
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-SKYPETEAMSMEETINGURL:https://teams.microsoft.com/l/meetup-join/
+ 19%3ameeting_OWZlZTY2OTYtY2E2Mi00NDFlLTk4NGUtZWI4MDk4MTJlYmQ5%40thread.v2/0
+ ?context=%7b%22Tid%22%3a%22ee63425f-af72-4a58-82e7-e451cc92646a%22%2c%22Oid
+ %22%3a%22a043465c-1f3b-434f-9891-e0ba94c74d8a%22%7d
+X-MICROSOFT-LOCATIONSOURCE:None
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230820T030000Z
+DTEND:20230820T050000Z
+DTSTAMP:20230826T132822Z
+ORGANIZER;CN=voco.center@gmail.com:mailto:voco.center@gmail.com
+UID:7qg50sb8j5a20q7gpnr2j1epuo@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=ngbaho
+ ch@gmail.com;X-NUM-GUESTS=0:mailto:ngbahoch@gmail.com
+CREATED:20230817T101215Z
+DESCRIPTION:<b><i>Trainee FSD Gen 4 thân mến\,</i></b><br><br>Để chuẩn bị c
+ ho hành trình học tại FSD sắp tới\, dưới đây là thông tin và một số lưu ý c
+ ho buổi Induction đầu tiên cho chương trình học Functional Speed Dating 202
+ 3 <br><ul><li>Thời gian: 10:00 - 12:00 am Chủ Nhật ngày 20/8/2023</li><li>N
+ ền tảng: Zoom</li><li>Link tham dự: <a href="https://uws.zoom.us/j/87881742
+ 015">https://uws.zoom.us/j/87881742015</a></li></ul><br>Lưu ý:<br><ul><li>L
+ ựa chọn "Xác nhận/yes/có" ở phía trên phần lịch được gửi tới để xác nhận th
+ am gia<br><br></li><li>Tham dự phòng học trước ít nhất 10ph để phía BTC sắp
+  xếp và duyệt các bạn vào phòng. Đặt tên theo cú pháp <b>Tên_Function 1st <
+ /b>để được duyệt vào phòng<br><br></li><li>Đây là buổi giới thiệu tổng quan
+  chương trình\, các buổi học và nội quy lớp học\, cũng như các nền tảng sẽ 
+ được sử dụng. Vì vậy\, các trainee hãy sắp xếp để tham dự thật đầy đủ nhé!<
+ br><br></li><li>Ngoài ra\, các bạn trainee hãy mau mau hoàn thành phí train
+ ing trước 23:59 ngày 20/8/2023 để chính thức xác nhận tham dự chương trình 
+ (Thông tin chi tiết trong email có tiêu đề "[VOCO CENTER] [FSD GEN4] | APPL
+ ICATION ROUND RESULT")</li></ul><br>Một lần nữa BTC VOCO Center và chị Huyề
+ n Lưu rất chúc mừng các bạn Trainee đã vượt qua vòng selection . Chúc các t
+ rainee sẽ có một hành trình học thật tốt sắp tới<br><br>Thân ái\,<br>VOCO C
+ enter
+LAST-MODIFIED:20230824T121046Z
+LOCATION:https://uws.zoom.us/j/87881742015
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:[FSD GEN 4] FSD INDUCTION SESSION
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20230827T080000Z
+DTEND:20230827T090000Z
+DTSTAMP:20230826T132822Z
+ORGANIZER;CN=voco.center@gmail.com:mailto:voco.center@gmail.com
+UID:6trnpeke5bcjhiofl1cbhr34k7@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=ng
+ bahoch@gmail.com;X-NUM-GUESTS=0:mailto:ngbahoch@gmail.com
+CREATED:20230826T092458Z
+DESCRIPTION:<i>* Vui lòng chọn "Xác nhận/có/Yes"để BTC nắm số lượng và duyệ
+ t bạn vào phòng</i><br><i><br></i><br><i>Các Trainee FSD Gen4 thân mến\,</i
+ ><br>Đây là buổi webinar nhằm đưa ra những nhận xét từ chị Huyền Lưu cho vò
+ ng tuyển chọn (selection round) của chương trình Functional Speed Dating Ge
+ n 4 vừa qua. Qua buổi webinar này\, chị Huyền sẽ chỉ ra những điểm tốt và đ
+ iểm cần cải thiện để các Trainee có thể tự rèn luyện kĩ năng ứng tuyển &amp
+ \; phỏng vấn trong tương lai<br><br>Lưu ý: Đây là webinar không bắt buộc (o
+ ptional) tức KHÔNG nằm trong khuôn khổ tính điểm điểm danh trong chương trì
+ nh FSD<br><br>Thông tin buổi webinar:<br><b>Thời gian: </b>3pm-4pm Chủ Nhật
+  ngày 27/8/2023 (tức ngày mai)<br><b>Nền tảng: </b>Zoom<br><b>Link đăng kí 
+ tham dự &amp\; tham dự:</b> <br><a href="https://uws.zoom.us/meeting/regist
+ er/tZcvcemgqTgqGNRYvDcafPtDiEkVOTWEa4QS">https://uws.zoom.us/meeting/regist
+ er/tZcvcemgqTgqGNRYvDcafPtDiEkVOTWEa4QS</a>
+LAST-MODIFIED:20230826T122013Z
+LOCATION:https://uws.zoom.us/meeting/register/tZcvcemgqTgqGNRYvDcafPtDiEkVO
+ TWEa4QS
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:WEBINAR: FSD GEN 4 SELECTION PROCESS FEEDBACK 
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

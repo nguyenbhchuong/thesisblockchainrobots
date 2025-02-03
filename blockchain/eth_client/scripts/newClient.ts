@@ -1,3 +1,5 @@
+//This program is the based blockchain client
+
 import {
   BaseContract,
   Contract,

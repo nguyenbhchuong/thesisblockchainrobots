@@ -1,3 +1,5 @@
+//this program is used to add a task to the smart contract
+
 const { ethers } = require("hardhat");
 const { contractAddress } = require("./contractAddress");
 

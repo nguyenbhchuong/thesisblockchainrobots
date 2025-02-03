@@ -1,3 +1,5 @@
+//This is the blockchain client for robot 0
+
 import {
   BaseContract,
   Contract,

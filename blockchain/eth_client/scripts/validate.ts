@@ -1,3 +1,5 @@
+//this program is for TESTING validation with blockchain
+
 import { BaseContract, ContractFactory, Signer } from "ethers";
 
 const { ethers } = require("hardhat");

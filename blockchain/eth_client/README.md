@@ -1,13 +1,6 @@
-# Sample Hardhat Project
+# eth_client - hardhat workspace
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
+- contracts: store the script of the smart contract
+- scripts: store the script of the blockchain client for robot and other scripts to interact with the smart contract from an account
+	- clients: store three clients for three robots
+hardhat.config.ts: local environment configuration for hardhat and simple tasks to check the setup

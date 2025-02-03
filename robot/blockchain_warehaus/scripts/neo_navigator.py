@@ -5,8 +5,8 @@ import actionlib
 import time
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from std_msgs.msg import String
-from std_msgs.msg import Int16;
 import threading
+from actionlib_msgs.msg import GoalID
 
 
 # Callbacks definition
@@ -18,20 +18,9 @@ def feedback_cb(feedback):
     rospy.loginfo("Current location: ")
     # +str(feedback))
 
-# def done_cb(status, result):
-#     if status == 3:
-#         rospy.loginfo("Goal reached")
-#     if status == 2 or status == 8:
-#         rospy.loginfo("Goal cancelled")
-#     if status == 4:
-#         rospy.loginfo("Goal aborted")
-    
-
-
 def navigate(position, orientation, done_cb):
     # navclient = actionlib.SimpleActionClient('move_base',MoveBaseAction)
-    global navclient
-
+    global navclient, isInterrupted
     navclient.wait_for_server()
 
     # Example of navigation goal
@@ -48,26 +37,70 @@ def navigate(position, orientation, done_cb):
     goal.target_pose.pose.orientation.w = orientation['w']
 
     navclient.send_goal(goal, done_cb, active_cb, feedback_cb)
-    finished = navclient.wait_for_result(rospy.Duration(secs=20))
+    # finished = navclient.wait_for_result(rospy.Duration(secs=60))
 
-    if not finished:
-        rospy.logerr("Action server not available!")
-        return False
-    else:
-        rospy.loginfo ( navclient.get_result())
-        return True
+    start_time = rospy.Time.now()
+    timeout = rospy.Duration(secs=180)  # 60 seconds timeout
+
+    while not rospy.is_shutdown():
+        # Check if interrupted
+        if isInterrupted:
+            rospy.loginfo("Navigation interrupted!")
+            navclient.cancel_all_goals()  # Cancel all goals
+            return False
+        
+        # Check if the goal is finished
+        # if navclient.wait_for_result(rospy.Duration(secs=1)):  # Check every second
+        #     rospy.loginfo(navclient.get_result())
+        #     return True
+
+        state = navclient.get_state()
+        if state == 3:
+            rospy.loginfo(navclient.get_result())
+            return True
+        elif state > 3:
+            rospy.logerr(state)
+            return False
+
+        # Check for timeout
+        if rospy.Time.now() - start_time > timeout:
+            rospy.logwarn("Navigation timed out!")
+            navclient.cancel_all_goals()
+            return False
+
+    # if not finished:
+    #     rospy.logerr("Action server not available!")
+    #     return False
+    # else:
+    #     rospy.loginfo ( navclient.get_result())
+    #     return True
     
 def callThread(data):
-    global t1
+    global t1, isInterrupted
+
+    trimData = data.data.split(';')
+
+    if (int(trimData[0]) == -1):
+        print('Should interrupt!!!!')
+        isInterrupted = True
+
+        try:
+            t1.join()
+        except:
+            print('no thread is running')
+        return
+    
     try:
         t1.join()
     except:
         print('no thread is running')
     finally:
-        t1 = threading.Thread(doTaskCallback, args=(data,))
+        isInterrupted = False
+        t1 = threading.Thread(target=doTaskCallback, args=(data,))
         t1.start()
 
 def doTaskCallback(data):
+    taskId = -1
     try:
         global isBusy
         global stage
@@ -75,20 +108,25 @@ def doTaskCallback(data):
         global endTime
         trimData = data.data.split(';')
 
+        # if (int(trimData[0]) == -1):
+        #     print('Should interrupt!!!!')
+        #     global navclient
+        #     navclient.cancel_all_goals()
+        #     return
+
         if (isBusy == 1):
             print('robot is busy doing another task!!')
             return
         
         timeStamp = int(trimData[0])
         taskStage = int(trimData[3])
+        taskId = int(trimData[4])
+
         print(timeStamp)
         print('start', startTime)
         print('end', endTime)
 
-        if (timeStamp == -1):
-            global navclient
-            navclient.cancel_all_goals()
-            return
+        
 
         if (startTime != 0 and (timeStamp >= startTime and timeStamp <= endTime)):
             return
@@ -102,7 +140,7 @@ def doTaskCallback(data):
 
         
         rospy.loginfo('received task!')
-        pub.publish(0)
+        pub.publish(f'{taskStage};{taskId}')
         
         #define callbacks
         def timeoutResolve():
@@ -111,7 +149,7 @@ def doTaskCallback(data):
             isBusy = 0
             endTime = round(time.time() * 1000)
             print('TIMEOUT! or FAILURE!')
-            pub.publish(-3)
+            pub.publish(f'{-3};{taskId}')
             #-3 means timeout
 
         def done_nav_deliver_cb(status, result):
@@ -121,10 +159,9 @@ def doTaskCallback(data):
                 global endTime
                 stage = 2
                 endTime = round(time.time() * 1000)
-                pub.publish(taskStage)
+                pub.publish(f'{taskStage+1};{taskId}')
 
         while not rospy.is_shutdown():
-                
             if (stage == 1):
                 result1 = navigate(position_good, orientation_good, done_nav_deliver_cb)
                 if not result1:
@@ -141,12 +178,14 @@ def doTaskCallback(data):
         print('navigator error in do task callback - should rebound',err)
         isBusy = 0
         endTime = round(time.time() * 1000)
-        pub.publish(-2)
+        pub.publish(f'{-2};{taskId}') #???? maybe an error here?
         return
 
 
-pub = rospy.Publisher('taskReport', Int16, queue_size=10)
-navclient = actionlib.SimpleActionClient('tb3_2/move_base',MoveBaseAction)
+pub = rospy.Publisher('taskReport', String, queue_size=10)
+# navclient = actionlib.SimpleActionClient('/tb3_2/move_base',MoveBaseAction)
+navclient = actionlib.SimpleActionClient('move_base',MoveBaseAction)
+isInterrupted = False
 t1 = None
 
 if __name__ == "__main__":
@@ -155,11 +194,11 @@ if __name__ == "__main__":
     startTime = 0
     endTime = 0
 
-    rospy.init_node('tb3_2_movement')
+    rospy.init_node('tb3_0_navigator')
 
-    rospy.Subscriber("taskAssign", String, doTaskCallback)
+    rospy.Subscriber("taskAssign", String, callThread)
 
-    print('tb3_2_movement is listening!')
+    print('tb3_0_navigator is listening!')
     
     rospy.spin()
     
